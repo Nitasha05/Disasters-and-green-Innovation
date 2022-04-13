@@ -43,6 +43,8 @@ by country: gen r7_total_affected = total_affected[_n-7]
 by country: gen r8_total_affected = total_affected[_n-8]
 by country: gen  r9_total_affected= total_affected[_n-9]
 by country: gen  r10_total_affected= total_affected[_n-10]
+by country: gen gdp_per_capita_lag = gdp_per_capita[_n-1]
+lab var gdp_per_capita_lag "Log GDP per capita (t-1)"
 lab var gdp_per_capita "Log GDP per capita"
 lab var control_total_patents "Log patent applications"
 gen e_gdp_per_capita = exp(gdp_per_capita)
@@ -135,4 +137,10 @@ drop if year==1985 | year==1986 | year==1987| year==1988 | year == 1989
 order r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths, after(total_deaths)
 order r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected, after(total_affected)
 order r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj, after(total_damages_adj)
+cd "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata"
+merge 1:1 country year using TOTPAT.dta, generate(merge2)
+sort country year
+drop if country=="PH" | country =="TH"
+replace control_total_patents = log(count)
+lab var count "Total Patents(count)"
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/data_drought.dta"

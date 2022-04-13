@@ -99,6 +99,7 @@ drop if country=="PH" | country=="TH"
 drop if year==1979 | year==1980 | year==1981 | year==1982 | year==1983 | year==1984 | year==1985 | year==1986 | year==1987 | year==1988 | year==1989
 sum panelvar
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/data_drought.dta", replace
+clear
 
 #ExTemp
 use "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/data_extemp.dta"
@@ -109,6 +110,7 @@ drop combi_1 combi_2 combi_3 combi_4 combi_5 combi_6 combi_7 combi_8 combi_9 com
 drop if year==1979 | year==1980 | year==1981 | year==1982 | year==1983 | year==1984 | year==1985 | year==1986 | year==1987 | year==1988 | year==1989
 sum panelvar
 save "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/data_extemp.dta", replace
+clear
 
 #Floods
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/data_flood.dta"
@@ -120,6 +122,7 @@ drop if year==1979 | year==1980 | year==1981 | year==1982 | year==1983 | year==1
 drop if country=="MA"
 sum panelvar
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/data_flood.dta", replace
+clear
 
 #Storm
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/data_storm.dta"
@@ -131,6 +134,7 @@ drop if year==1979 | year==1980 | year==1981 | year==1982 | year==1983 | year==1
 drop if country=="MA"
 sum panelvar
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/data_storm.dta", replace
+clear
 
 
 
