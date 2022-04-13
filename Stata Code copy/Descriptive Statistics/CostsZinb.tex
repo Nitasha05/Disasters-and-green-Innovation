@@ -1,0 +1,25 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{The costs of extreme weather events}
+\begin{tabular}{l*{8}{D{.}{.}{-1}}}
+\toprule
+                    &       Storm         &                     &                     &       Flood         &                     &                     &Extreme Temperature         &                     \\
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                    &\multicolumn{1}{c}{Damages(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}&\multicolumn{1}{c}{Damages(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}\\
+\midrule
+main                &                     &                     &                     &                     &                     &                     &                     &                     \\
+Wind\_speed          &       0.083\sym{***}&       0.131\sym{***}&       0.053\sym{***}&                     &                     &                     &                     &                     \\
+                    &     (0.006)         &     (0.009)         &     (0.007)         &                     &                     &                     &                     &                     \\
+Positive\_precipitation\_anomaly&                     &                     &                     &      -1.031\sym{***}&      -1.338\sym{***}&      -0.327         &                     &                     \\
+                    &                     &                     &                     &     (0.271)         &     (0.235)         &     (0.227)         &                     &                     \\
+Temperature\_anomaly &                     &                     &                     &                     &                     &                     &       0.396\sym{*}  &      -0.002         \\
+                    &                     &                     &                     &                     &                     &                     &     (0.239)         &     (0.064)         \\
+\midrule
+Observations        &         795         &         795         &         795         &         795         &         795         &         795         &         816         &         816         \\
+Overall R-square    &                     &                     &                     &                     &                     &                     &                     &                     \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize Notes : Deaths and affected are measured in thousands and economic damages are measures in billions US$ at 2015 price.}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

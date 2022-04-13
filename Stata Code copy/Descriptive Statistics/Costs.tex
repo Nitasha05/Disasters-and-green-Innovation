@@ -1,0 +1,26 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{The costs of extreme weather events}
+\begin{tabular}{l*{12}{D{.}{.}{-1}}}
+\toprule
+                    &    Droughts         &                     &                     &       Storm         &                     &                     &       Flood         &                     &                     &Extreme Temperature         &                     &                     \\
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}&\multicolumn{1}{c}{(11)}&\multicolumn{1}{c}{(12)}\\
+                    &\multicolumn{1}{c}{Damages(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}&\multicolumn{1}{c}{Damages(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}&\multicolumn{1}{c}{Damages(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}&\multicolumn{1}{c}{Damages(log)}&\multicolumn{1}{c}{Affecetd(log)}&\multicolumn{1}{c}{Deaths(log)}\\
+\midrule
+Precipitation\_anomaly&      -0.019         &      -0.293\sym{**} &      -0.004         &                     &                     &                     &                     &                     &                     &                     &                     &                     \\
+                    &     (0.017)         &     (0.138)         &     (0.003)         &                     &                     &                     &                     &                     &                     &                     &                     &                     \\
+Wind\_speed          &                     &                     &                     &       0.008\sym{***}&       0.027\sym{***}&       0.003\sym{*}  &                     &                     &                     &                     &                     &                     \\
+                    &                     &                     &                     &     (0.002)         &     (0.008)         &     (0.002)         &                     &                     &                     &                     &                     &                     \\
+Positive\_precipitation\_anomaly&                     &                     &                     &                     &                     &                     &       0.003         &       0.281\sym{**} &       0.023\sym{**} &                     &                     &                     \\
+                    &                     &                     &                     &                     &                     &                     &     (0.033)         &     (0.141)         &     (0.011)         &                     &                     &                     \\
+Temperature\_anomaly &                     &                     &                     &                     &                     &                     &                     &                     &                     &       0.004\sym{*}  &       0.009         &      -0.000         \\
+                    &                     &                     &                     &                     &                     &                     &                     &                     &                     &     (0.002)         &     (0.006)         &     (0.001)         \\
+\midrule
+Observations        &         774         &         774         &         774         &         795         &         795         &         795         &         795         &         795         &         795         &         816         &         816         &         816         \\
+Overall R-square    &       0.056         &       0.133         &       0.047         &       0.226         &       0.302         &       0.241         &       0.092         &       0.340         &       0.258         &       0.056         &       0.034         &       0.096         \\
+\bottomrule
+\multicolumn{13}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{13}{l}{\footnotesize Notes : Deaths and affected are measured in thousands and economic damages are measures in billions US$ at 2015 price. Unity is aded to all before taking logs}\\
+\multicolumn{13}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

@@ -1,0 +1,76 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Adaptation innovation response to extreme weather shocks (2SLS estimates) \label{reg122}}
+\begin{tabular}{l*{8}{D{.}{.}{-1}}}
+\toprule
+                    &       Storm         &                     &     Drought         &                     &       Flood         &                     &Extreme Temperature         &                     \\
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                    &\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}&\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}&\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}&\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}\\
+\midrule
+granted\_count       &                     &                     &                     &                     &                     &                     &                     &                     \\
+Green\_technology\_knowledge\_stocks(Year\_t-1)&       1.013\sym{***}&       1.013\sym{***}&       1.015\sym{***}&       1.009\sym{**} &       1.019\sym{***}&       1.020\sym{***}&       1.019\sym{***}&       1.019\sym{***}\\
+                    &     (0.005)         &     (0.005)         &     (0.005)         &     (0.004)         &     (0.006)         &     (0.006)         &     (0.004)         &     (0.004)         \\
+Storm\_adaptation\_patents(granted)&       1.011\sym{***}&       1.011\sym{***}&                     &                     &                     &                     &                     &                     \\
+                    &     (0.004)         &     (0.004)         &                     &                     &                     &                     &                     &                     \\
+Year\_t              &       1.119         &                     &   7.848e+08         &                     &       0.228         &                     &       0.831         &                     \\
+                    &     (0.332)         &                     & (2.970e+10)         &                     &     (0.394)         &                     &     (0.123)         &                     \\
+Year\_t-1            &       0.949         &                     &   2.765e+10         &                     &       1.293         &                     &       1.080         &                     \\
+                    &     (0.199)         &                     & (4.273e+11)         &                     &     (1.662)         &                     &     (0.200)         &                     \\
+Year\_t-2            &       0.920         &                     & 3103869.623         &                     &       0.621         &                     &       1.320         &                     \\
+                    &     (0.123)         &                     &(32831587.097)         &                     &     (0.836)         &                     &     (0.792)         &                     \\
+Year\_t-3            &       1.164         &                     &      20.898         &                     &       0.266         &                     &       1.839         &                     \\
+                    &     (0.130)         &                     &   (309.193)         &                     &     (0.248)         &                     &     (1.281)         &                     \\
+Year\_t-4            &       0.846         &                     &   3.859e+13\sym{**} &                     &       0.215         &                     &       0.795         &                     \\
+                    &     (0.122)         &                     & (4.720e+14)         &                     &     (0.325)         &                     &     (0.213)         &                     \\
+Year\_t-5            &       1.035         &                     &   9.310e+10\sym{**} &                     &       0.057\sym{**} &                     &       0.567         &                     \\
+                    &     (0.125)         &                     & (1.052e+12)         &                     &     (0.073)         &                     &     (0.256)         &                     \\
+Year\_t-6            &       1.157         &                     &   2.065e+10\sym{*}  &                     &       0.043\sym{*}  &                     &       0.910         &                     \\
+                    &     (0.113)         &                     & (2.502e+11)         &                     &     (0.076)         &                     &     (0.315)         &                     \\
+Year\_t-7            &       1.091         &                     &     662.107         &                     &       0.145         &                     &       0.291\sym{***}&                     \\
+                    &     (0.166)         &                     &  (5945.394)         &                     &     (0.199)         &                     &     (0.083)         &                     \\
+Storm\_adaptation\_knowledge\_stocks(Year\_t-1)&       0.927         &       0.928         &                     &                     &                     &                     &                     &                     \\
+                    &     (0.049)         &     (0.049)         &                     &                     &                     &                     &                     &                     \\
+Log\_GDP\_per\_capita  &       1.289         &       1.280         &  304681.575\sym{*}  &       0.693         &       0.552         &       1.737         &      11.092         &       0.308         \\
+                    &     (0.376)         &     (0.441)         &(2131053.135)         &     (0.602)         &     (1.087)         &     (4.727)         &    (18.982)         &     (0.610)         \\
+Institution\_index   &       1.165\sym{***}&       1.169\sym{***}&       0.896         &       1.404\sym{**} &       1.013         &       1.054         &       1.157\sym{*}  &       1.111         \\
+                    &     (0.059)         &     (0.058)         &     (0.098)         &     (0.211)         &     (0.086)         &     (0.130)         &     (0.099)         &     (0.092)         \\
+Log\_patent\_applications&       1.026         &       1.028\sym{*}  &       1.189         &       1.009         &       1.033         &       1.339\sym{*}  &       1.156         &       1.064         \\
+                    &     (0.016)         &     (0.017)         &     (0.134)         &     (0.053)         &     (0.055)         &     (0.223)         &     (0.103)         &     (0.128)         \\
+Year\_t              &                     &       1.020         &                     &       0.616         &                     &       3.117         &                     &       1.101         \\
+                    &                     &     (0.055)         &                     &     (0.444)         &                     &     (2.492)         &                     &     (0.090)         \\
+Year\_t-1            &                     &       0.989         &                     &       0.574         &                     &       0.985         &                     &       0.959         \\
+                    &                     &     (0.040)         &                     &     (0.469)         &                     &     (0.340)         &                     &     (0.099)         \\
+Year\_t-2            &                     &       0.982         &                     &       0.564         &                     &       1.169         &                     &       0.819         \\
+                    &                     &     (0.026)         &                     &     (0.527)         &                     &     (0.315)         &                     &     (0.365)         \\
+Year\_t-3            &                     &       1.031         &                     &       0.890         &                     &       1.922         &                     &       6.071         \\
+                    &                     &     (0.023)         &                     &     (1.030)         &                     &     (0.841)         &                     &    (15.143)         \\
+Year\_t-4            &                     &       0.968         &                     &       0.077\sym{**} &                     &       1.436         &                     &       0.467         \\
+                    &                     &     (0.026)         &                     &     (0.089)         &                     &     (1.467)         &                     &     (0.388)         \\
+Year\_t-5            &                     &       1.005         &                     &       0.142\sym{*}  &                     &       2.078\sym{*}  &                     &       0.241         \\
+                    &                     &     (0.022)         &                     &     (0.158)         &                     &     (0.907)         &                     &     (0.281)         \\
+Year\_t-6            &                     &       1.041         &                     &       0.131         &                     &       1.903         &                     &       0.805         \\
+                    &                     &     (0.029)         &                     &     (0.172)         &                     &     (0.903)         &                     &     (0.525)         \\
+Year\_t-7            &                     &       1.035         &                     &       0.334         &                     &       1.039         &                     &       0.075\sym{***}\\
+                    &                     &     (0.063)         &                     &     (0.342)         &                     &     (0.240)         &                     &     (0.050)         \\
+Drought\_adaptation\_patents(granted)&                     &                     &       1.004\sym{***}&       1.004\sym{***}&                     &                     &                     &                     \\
+                    &                     &                     &     (0.001)         &     (0.001)         &                     &                     &                     &                     \\
+Drought\_adaptation\_knowledge\_stocks(Year\_t-1)&                     &                     &       1.097         &       1.144\sym{**} &                     &                     &                     &                     \\
+                    &                     &                     &     (0.075)         &     (0.078)         &                     &                     &                     &                     \\
+Flood\_adaptation\_patents(granted)&                     &                     &                     &                     &       1.011\sym{**} &       1.011\sym{***}&                     &                     \\
+                    &                     &                     &                     &                     &     (0.004)         &     (0.004)         &                     &                     \\
+Flood\_adaptation\_knowledge\_stocks(Year\_t-1)&                     &                     &                     &                     &       0.886         &       0.917         &                     &                     \\
+                    &                     &                     &                     &                     &     (0.068)         &     (0.065)         &                     &                     \\
+ExtremeTemperature\_adaptation\_patents(granted)&                     &                     &                     &                     &                     &                     &       1.002\sym{*}  &       1.002\sym{*}  \\
+                    &                     &                     &                     &                     &                     &                     &     (0.001)         &     (0.001)         \\
+ExtremeTemperature\_adaptation\_knowledge\_stocks(Year\_t-1)&                     &                     &                     &                     &                     &                     &       1.022         &       1.026         \\
+                    &                     &                     &                     &                     &                     &                     &     (0.149)         &     (0.149)         \\
+\midrule
+Cumulative effect   &       0.230         &       0.070         &      99.343         &     -10.437         &     -13.182         &       2.488         &     -37.028         &     -12.487         \\
+ Log-liklihood      &  -19367.304         &  -19368.416         &  -13084.313         &  -16154.991         &  -15459.128         &  -15415.042         &  -13985.523         &  -14075.933         \\
+Observations        &     714.000         &     714.000         &     587.000         &     659.000         &     603.000         &     603.000         &     619.000         &     619.000         \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Exponentiated coefficients; Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize Notes : Deaths are measured in thousands and economic damages are measures in billions US$ at 2015 price}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
