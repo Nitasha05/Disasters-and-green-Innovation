@@ -1,20 +1,50 @@
 
 ##Labelling continents
 
+#STORM
 import delimited "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/Storm_EMDAT_panel.csv"
 #code
+drop if country=="MA"
+drop panelvar
+egen panelvar = group(country)
+xtset panelvar year
+merge 1:1 country year using data_storm.dta, generate(match2)
+drop total_deaths total_affected total_damages_adj dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/EMDAT.dta"
 
+#FLOOD
 import delimited "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/Flood_EMDAT_panel.csv"
 #code
+drop if country=="MA"
+drop panelvar
+egen panelvar = group(country)
+xtset panelvar year
+cd "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata"
+merge 1:1 country year using data_flood.dta, generate(match2)
+drop total_deaths total_affected total_damages_adj dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/EMDAT_flood.dta"
 
+#DROUGHT
 import delimited "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/Drought_EMDAT_panel.csv"
 #code
+drop if country=="PH" | country == "TH"
+drop panelvar
+egen panelvar = group(country)
+xtset panelvar year
+cd "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata"
+merge 1:1 country year using data_drought.dta, generate(match2)
+drop total_deaths total_affected total_damages_adj dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/EMDAT_drought.dta"
 
+#EXTEMP
 import delimited "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/Extreme temperature _EMDAT_panel.csv"
 #code
+drop panelvar
+egen panelvar = group(country)
+xtset panelvar year
+cd "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata"
+merge 1:1 country year using data_extemp.dta, generate(match2)
+drop total_deaths total_affected total_damages_adj dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
 save "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/EMDAT_extemp.dta"
 
 
@@ -103,9 +133,55 @@ lab var r4_TOTAFFECTED "Affected victims (Year t-4)"
 lab var r3_TOTAFFECTED "Affected victims (Year t-3)"
 lab var r2_TOTAFFECTED "Affected victims (Year t-2)"
 lab var r1_TOTAFFECTED "Affected victims (Year t-1)"
-drop if year==1994 | year==1985 | year==1986 | year==1987| year==1988 | year == 1989 | year==2011 | year==2012 | year==2013 | year==2014 | year==2014 | year==2015 | year==2016 | year==2017 | year==2018 | year==2019 | year==2020
+drop if year==1984 | year==1985 | year==1986 | year==1987| year==1988 | year == 1989 | year==2011 | year==2012 | year==2013 | year==2014 | year==2014 | year==2015 | year==2016 | year==2017 | year==2018 | year==2019 | year==2020
 
 
+#RESTRICT TO SAMPLE
+keep if country=="Argentina" | country=="Australia"  | country=="Belgium" | country== "Brazil" | country== "Bulgaria"  | country=="Canada" | country== "China" | country== "Denmark"  | country=="Egypt"  | country=="Finland"  | country=="France" | country== "Germany"  | country=="Greece"  | country=="Hungary"  | country=="India"  | country=="Ireland"  | country=="Israel"  | country=="Italy"  | country=="Japan" | country== "Korea (the Republic of)" | country== "Malaysia" | country== "Mexico"  | country=="Morocco"  | country=="Netherlands (the)" | country== "New Zealand"  | country=="Norway"  | country=="Panama"  | country=="Philippines (the)" | country== "Poland"  | country=="Russian Federation (the)"  | country=="Singapore"  | country=="Slovenia" | country== "South Africa"  | country=="Spain"  | country=="Sweden" | country=="Switzerland" | country== "Thailand" | country== "Ukraine" | country== "United Kingdom of Great Britain and Northern Ireland (the)" | country== "United States of America (the)"
+
+#USE CODES
+replace country = "AR" if country=="Argentina" 
+replace country = "AU" if country=="Australia"  
+replace country = "BE" if country=="Belgium" 
+replace country = "BR" if country== "Brazil" 
+replace country = "BG" if country== "Bulgaria"  
+replace country = "CA" if country=="Canada" 
+replace country = "CN" if country== "China" 
+replace country = "DK" if country== "Denmark"  
+replace country = "EG" if country=="Egypt"  
+replace country = "FI" if country=="Finland"  
+replace country = "FR" if country=="France" 
+replace country = "DE" if country== "Germany"  
+replace country = "GR" if country=="Greece"  
+replace country = "HU" if country=="Hungary"  
+replace country = "IN" if country=="India"  
+replace country = "IE" if country=="Ireland"  
+replace country = "IL" if country=="Israel"  
+replace country = "IT" if country=="Italy"  
+replace country = "JP" if country=="Japan" 
+replace country = "KR" if country== "Korea (the Republic of)" 
+replace country = "MY" if country== "Malaysia" 
+replace country = "MX" if country== "Mexico"  
+replace country = "MA" if country=="Morocco"  
+replace country = "NL" if country=="Netherlands (the)" 
+replace country = "NZ" if country== "New Zealand"  
+replace country = "NO" if country=="Norway"  
+replace country = "PA" if country=="Panama"  
+replace country = "PH" if country=="Philippines (the)" 
+replace country = "PL" if country== "Poland"  
+replace country = "RU" if country=="Russian Federation (the)"  
+replace country = "SG" if country=="Singapore"  
+replace country = "SI" if country=="Slovenia" 
+replace country = "ZA" if country== "South Africa"  
+replace country = "ES" if country=="Spain"  
+replace country = "SE" if country=="Sweden" 
+replace country = "CH" if country=="Switzerland" 
+replace country = "TH" if country== "Thailand" 
+replace country = "UA" if country== "Ukraine" 
+replace country = "GB" if country== "United Kingdom of Great Britain and Northern Ireland (the)" 
+replace country = "US" if country== "United States of America (the)"
+
+######################################################################################################################
 ##Aggregating by continent
 
 replace region = "Europe" if country == "BE" |country == "BG" |country == "CH" |country == "DE" |country == "DK" |country == "ES" |country == "FI" |country == "FR" |country =="GB" |country == "GR" |country == "HU" |country == "IE" |country == "IT" |country == "NL" |country == "NO" |country == "PL" |country == "SE" |country == "SI" | country == "UA" | country == "RU" 
