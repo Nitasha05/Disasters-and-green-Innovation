@@ -49,7 +49,6 @@ lab var gdp_per_capita "Log GDP per capita"
 lab var control_total_patents "Log patent applications"
 gen e_gdp_per_capita = exp(gdp_per_capita)
 lab var e_gdp_per_capita "GDP per capita (constant 2015 US$)"
-gen e_control_total_patents = exp(control_total_patents)
 sort country year
 by country: gen lag_k_stock = k_stock[_n-1]
 lab var lag_k_stock "Log green knowledge stock (year t-1)"
@@ -58,7 +57,6 @@ by country: gen lag_flood_k_stock = _flood_k_stock[_n-1]
 lab var lag_flood_k_stock "Log flood adaptation knowledge stock (year t-1)"
 order lag_flood_k_stock, after(_flood_k_stock)
 lab var _flood_k_stock "Log flood adaptation knowledge stocks"
-lab var e_control_total_patents " Total Patent applications"
 lab var r10_flood "Flood indicator"
 lab var flood "Flood (not lagged)"
 order flood r10_flood , after(_flood_k_stock)
