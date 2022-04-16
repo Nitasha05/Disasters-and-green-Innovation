@@ -1,0 +1,62 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Sensitivity analysis: effect of flood deaths on green innovation response (2SLS estimates) \label{reg122}}
+\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+Green patents (granted)&                     &                     &                     &                     &                     &                     \\
+Log green knowledge stock (year t-1)&       1.006\sym{***}&       1.006\sym{***}&       1.006\sym{**} &       1.006\sym{**} &       1.008\sym{***}&       1.009\sym{***}\\
+                    &     (0.002)         &     (0.002)         &     (0.003)         &     (0.003)         &     (0.003)         &     (0.003)         \\
+\addlinespace
+Year t-1            &       0.073\sym{**} &       0.073\sym{**} &       0.088\sym{**} &       0.068\sym{**} &       0.095\sym{**} &       0.116\sym{**} \\
+                    &     (0.083)         &     (0.085)         &     (0.104)         &     (0.074)         &     (0.101)         &     (0.110)         \\
+\addlinespace
+Year t-2            &       0.176\sym{**} &       0.173\sym{**} &       0.166\sym{***}&       0.219\sym{**} &       0.248\sym{*}  &       0.349         \\
+                    &     (0.128)         &     (0.119)         &     (0.115)         &     (0.152)         &     (0.179)         &     (0.287)         \\
+\addlinespace
+Year t-3            &       0.053\sym{***}&       0.042\sym{***}&       0.038\sym{***}&       0.041\sym{***}&       0.057\sym{***}&       0.061\sym{***}\\
+                    &     (0.056)         &     (0.048)         &     (0.042)         &     (0.046)         &     (0.060)         &     (0.064)         \\
+\addlinespace
+Year t-4            &       0.071\sym{*}  &       0.046\sym{**} &       0.032\sym{**} &       0.032\sym{**} &       0.048\sym{**} &       0.058\sym{*}  \\
+                    &     (0.104)         &     (0.068)         &     (0.053)         &     (0.051)         &     (0.071)         &     (0.086)         \\
+\addlinespace
+Year t-5            &       0.139\sym{**} &       0.107\sym{***}&       0.060\sym{***}&       0.053\sym{***}&       0.067\sym{***}&       0.086\sym{***}\\
+                    &     (0.109)         &     (0.091)         &     (0.055)         &     (0.048)         &     (0.059)         &     (0.081)         \\
+\addlinespace
+Flood adaptation KS(t-1)&       0.658         &       0.644         &       0.564         &       0.697         &       1.351         &       1.756         \\
+                    &     (0.495)         &     (0.445)         &     (0.372)         &     (0.444)         &     (1.031)         &     (1.380)         \\
+\addlinespace
+Log GDP per capita (t-1)&       0.407         &       0.396         &       0.615         &       0.508         &       0.132         &       0.040\sym{\%}  \\
+                    &     (0.527)         &     (0.472)         &     (0.661)         &     (0.609)         &     (0.231)         &     (0.086)         \\
+\addlinespace
+Institution index   &       1.146\sym{***}&       1.136\sym{***}&       1.134\sym{***}&       1.124\sym{**} &       1.097\sym{**} &       1.082\sym{*}  \\
+                    &     (0.055)         &     (0.052)         &     (0.053)         &     (0.052)         &     (0.049)         &     (0.045)         \\
+\addlinespace
+Log patent applications&       2.761\sym{***}&       2.919\sym{***}&       3.058\sym{***}&       3.276\sym{***}&       3.281\sym{***}&       2.899\sym{***}\\
+                    &     (0.443)         &     (0.451)         &     (0.450)         &     (0.475)         &     (0.492)         &     (0.607)         \\
+\addlinespace
+Year t-6            &                     &       0.182\sym{***}&       0.103\sym{***}&       0.072\sym{***}&       0.119\sym{***}&       0.127\sym{**} \\
+                    &                     &     (0.102)         &     (0.062)         &     (0.048)         &     (0.094)         &     (0.107)         \\
+\addlinespace
+Year t-7            &                     &                     &       0.088\sym{***}&       0.083\sym{***}&       0.093\sym{***}&       0.136\sym{**} \\
+                    &                     &                     &     (0.041)         &     (0.047)         &     (0.078)         &     (0.128)         \\
+\addlinespace
+Year t-8            &                     &                     &                     &       0.404         &       0.785         &       0.864         \\
+                    &                     &                     &                     &     (0.334)         &     (0.933)         &     (1.261)         \\
+\addlinespace
+Year t-9            &                     &                     &                     &                     &       1.982         &       3.405         \\
+                    &                     &                     &                     &                     &     (2.162)         &     (4.428)         \\
+\addlinespace
+Year t-10           &                     &                     &                     &                     &                     &       3.587         \\
+                    &                     &                     &                     &                     &                     &     (3.832)         \\
+\midrule
+Cumulative          &     -11.910         &     -14.545         &     -18.446         &     -19.787         &     -16.396         &     -13.006         \\
+ll                  &  -12134.423         &  -11631.164         &  -10969.539         &  -10396.103         &   -9525.799         &   -8728.538         \\
+N                   &     770.000         &     739.000         &     706.000         &     672.000         &     638.000         &     601.000         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Exponentiated coefficients; Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize Notes : Deaths are measured in thousands}\\
+\multicolumn{7}{l}{\footnotesize \sym{\%} \(p<0.15\), \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

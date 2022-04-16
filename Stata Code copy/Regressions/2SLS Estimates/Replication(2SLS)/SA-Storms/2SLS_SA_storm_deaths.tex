@@ -1,0 +1,59 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Sensitivity Analysis: Storm adaptation innovation response to deaths caused by extreme weather shocks (2SLS estimates) \label{reg122}}
+\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+Storm adaptation patents (granted)&                     &                     &                     &                     &                     &                     \\
+Year t-1            &       0.928         &       0.918         &       0.962         &       1.001         &       0.700         &       0.858         \\
+                    &     (0.341)         &     (0.320)         &     (0.336)         &     (0.348)         &     (0.207)         &     (0.290)         \\
+\addlinespace
+Year t-2            &       0.917         &       0.910         &       0.922         &       0.944         &       1.194         &       1.140         \\
+                    &     (0.212)         &     (0.214)         &     (0.210)         &     (0.237)         &     (0.343)         &     (0.252)         \\
+\addlinespace
+Year t-3            &       0.592\sym{*}  &       0.611\sym{*}  &       0.625\sym{\%}  &       0.631\sym{\%}  &       0.575\sym{*}  &       0.651\sym{\%}  \\
+                    &     (0.162)         &     (0.179)         &     (0.185)         &     (0.179)         &     (0.168)         &     (0.186)         \\
+\addlinespace
+Year t-4            &       1.644\sym{\%}  &       1.514         &       1.562\sym{\%}  &       1.805\sym{**} &       1.602\sym{\%}  &       1.723\sym{\%}  \\
+                    &     (0.529)         &     (0.500)         &     (0.464)         &     (0.511)         &     (0.522)         &     (0.623)         \\
+\addlinespace
+Year t-5            &       1.063         &       0.984         &       0.998         &       1.075         &       1.099         &       1.159         \\
+                    &     (0.333)         &     (0.315)         &     (0.308)         &     (0.350)         &     (0.319)         &     (0.245)         \\
+\addlinespace
+Storm adaptation KS &      14.198         &       9.204         &       9.834         &       5.276         &      98.242         &      38.817         \\
+                    &    (35.022)         &    (27.501)         &    (28.765)         &    (17.811)         &   (411.421)         &   (160.639)         \\
+\addlinespace
+Log GDP per capita (t-1)&       0.056         &       0.157         &       0.145         &       0.385         &       0.003         &       0.012         \\
+                    &     (0.225)         &     (0.775)         &     (0.703)         &     (2.085)         &     (0.023)         &     (0.078)         \\
+\addlinespace
+Institution index   &       1.101         &       1.147         &       1.134         &       1.116         &       1.041         &       1.036         \\
+                    &     (0.194)         &     (0.234)         &     (0.237)         &     (0.245)         &     (0.239)         &     (0.239)         \\
+\addlinespace
+Log patent applications&       5.015\sym{***}&       4.989\sym{***}&       5.107\sym{***}&       4.991\sym{***}&       7.700\sym{***}&       7.306\sym{***}\\
+                    &     (1.417)         &     (1.832)         &     (1.870)         &     (1.974)         &     (3.434)         &     (3.061)         \\
+\addlinespace
+Year t-6            &                     &       1.438         &       1.454         &       1.485         &       1.351         &       1.407         \\
+                    &                     &     (0.511)         &     (0.539)         &     (0.546)         &     (0.492)         &     (0.490)         \\
+\addlinespace
+Year t-7            &                     &                     &       1.040         &       1.096         &       1.177         &       1.272         \\
+                    &                     &                     &     (0.299)         &     (0.311)         &     (0.390)         &     (0.456)         \\
+\addlinespace
+Year t-8            &                     &                     &                     &       0.990         &       0.855         &       0.899         \\
+                    &                     &                     &                     &     (0.371)         &     (0.329)         &     (0.285)         \\
+\addlinespace
+Year t-9            &                     &                     &                     &                     &       0.474\sym{*}  &       0.467\sym{*}  \\
+                    &                     &                     &                     &                     &     (0.182)         &     (0.187)         \\
+\addlinespace
+Year t-10           &                     &                     &                     &                     &                     &       1.352         \\
+                    &                     &                     &                     &                     &                     &     (0.476)         \\
+\midrule
+Cumulative effect   &      -0.127         &       0.089         &       0.267         &       0.622         &      -0.607         &       0.257         \\
+ Log-liklihood      &   -1228.429         &   -1158.966         &   -1111.691         &   -1046.494         &    -982.279         &    -914.048         \\
+Observations        &     686.000         &     659.000         &     630.000         &     600.000         &     570.000         &     537.000         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Exponentiated coefficients; Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize Notes : Deaths are measured in thousands. KS stands for knowledge stock}\\
+\multicolumn{7}{l}{\footnotesize \sym{\%} \(p<0.15\), \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

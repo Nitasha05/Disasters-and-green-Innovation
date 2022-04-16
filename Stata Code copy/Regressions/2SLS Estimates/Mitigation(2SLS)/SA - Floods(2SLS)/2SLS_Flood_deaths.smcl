@@ -1,0 +1,525 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/nitashajhala/Desktop/Stata Code/Regressions/2SLS Estimates/Mitigation(2SLS)/SA - Floods(2SLS)/2SLS_Flood_deaths.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}16 Apr 2022, 10:22:11
+
+{com}. use "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/data_flood.dta"
+
+. lab var floodks_hat "Flood adaptation KS(t-1)"
+
+. lab var death_hat "Year t"
+
+. lab var death_hat1 "Year t-1"
+
+. lab var death_hat2 "Year t-2"
+
+. lab var death_hat3 "Year t-3"
+
+. lab var death_hat4 "Year t-4"
+
+. lab var death_hat5 "Year t-5"
+
+. lab var death_hat6 "Year t-6"
+
+. lab var death_hat7 "Year t-7"
+
+. lab var death_hat8 "Year t-8"
+
+. lab var death_hat9 "Year t-9"
+
+. lab var death_hat10 "Year t-10"
+
+. lab var dam_hat "Year t"
+
+. lab var dam_hat1 "Year t-1"
+
+. lab var dam_hat2 "Year t-2"
+
+. lab var dam_hat3 "Year t-3"
+
+. lab var dam_hat4 "Year t-4"
+
+. lab var dam_hat5 "Year t-5"
+
+. lab var dam_hat6 "Year t-6"
+
+. lab var dam_hat7 "Year t-7"
+
+. lab var dam_hat8 "Year t-8"
+
+. lab var dam_hat9 "Year t-9"
+
+. lab var dam_hat10 "Year t-10"
+
+. est clear
+
+. eststo: xtpoisson granted_count lag_k_stock death_hat1 death_hat2 death_hat3 death_hat4 death_hat5  floodks_hat   gdp_per_capita_lag polity control_total_patents v6-v26, fe vce(robust)
+{res}
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-103528.66}  
+Iteration 1:{space 3}log pseudolikelihood = {res: -16901.45}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-12161.374}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-12134.428}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-12134.423}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-12134.423}  
+{res}
+{txt}{col 1}Conditional fixed-effects Poisson regression{col 51}{lalign 16:Number of obs}{col 67} = {res}{ralign 9:770}
+{txt}{col 1}{txt}Group variable: {res}panelvar{txt}{col 51}{lalign 16:Number of groups}{col 67} = {res}{ralign 9:39}
+
+{txt}{col 51}Obs per group:
+{col 51}{ralign 16:min}{col 67} = {res}{ralign 9:9}
+{txt}{col 51}{ralign 16:avg}{col 67} = {res}{ralign 9:19.7}
+{txt}{col 51}{ralign 16:max}{col 67} = {res}{ralign 9:21}
+
+{txt}{col 51}{lalign 16:Wald chi2({res:30})}{col 67} = {res}{ralign 9:327866.72}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-12134.423}{txt}{col 51}{lalign 16:Prob > chi2}{col 67} = {res}{ralign 9:0.0000}
+
+{txt}{ralign 87:(Std. err. adjusted for clustering on {res:panelvar})}
+{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 23}{c |}{col 35}    Robust
+{col 1}        granted_count{col 23}{c |} Coefficient{col 35}  std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}lag_k_stock {c |}{col 23}{res}{space 2}  .006192{col 35}{space 2} .0023809{col 46}{space 1}    2.60{col 55}{space 3}0.009{col 63}{space 4} .0015255{col 76}{space 3} .0108584
+{txt}{space 11}death_hat1 {c |}{col 23}{res}{space 2}-2.619943{col 35}{space 2} 1.141492{col 46}{space 1}   -2.30{col 55}{space 3}0.022{col 63}{space 4}-4.857226{col 76}{space 3}-.3826592
+{txt}{space 11}death_hat2 {c |}{col 23}{res}{space 2}-1.737392{col 35}{space 2} .7253059{col 46}{space 1}   -2.40{col 55}{space 3}0.017{col 63}{space 4}-3.158965{col 76}{space 3}-.3158184
+{txt}{space 11}death_hat3 {c |}{col 23}{res}{space 2} -2.93153{col 35}{space 2}   1.0566{col 46}{space 1}   -2.77{col 55}{space 3}0.006{col 63}{space 4}-5.002427{col 76}{space 3}-.8606325
+{txt}{space 11}death_hat4 {c |}{col 23}{res}{space 2}-2.651769{col 35}{space 2} 1.469373{col 46}{space 1}   -1.80{col 55}{space 3}0.071{col 63}{space 4}-5.531688{col 76}{space 3} .2281495
+{txt}{space 11}death_hat5 {c |}{col 23}{res}{space 2}-1.969725{col 35}{space 2} .7812256{col 46}{space 1}   -2.52{col 55}{space 3}0.012{col 63}{space 4}-3.500899{col 76}{space 3}-.4385514
+{txt}{space 10}floodks_hat {c |}{col 23}{res}{space 2}-.4182969{col 35}{space 2} .7516819{col 46}{space 1}   -0.56{col 55}{space 3}0.578{col 63}{space 4}-1.891566{col 76}{space 3} 1.054973
+{txt}{space 3}gdp_per_capita_lag {c |}{col 23}{res}{space 2}-.8989043{col 35}{space 2}  1.29588{col 46}{space 1}   -0.69{col 55}{space 3}0.488{col 63}{space 4}-3.438782{col 76}{space 3} 1.640973
+{txt}{space 15}polity {c |}{col 23}{res}{space 2}  .136524{col 35}{space 2} .0482303{col 46}{space 1}    2.83{col 55}{space 3}0.005{col 63}{space 4} .0419944{col 76}{space 3} .2310537
+{txt}control_total_patents {c |}{col 23}{res}{space 2} 1.015549{col 35}{space 2} .1605329{col 46}{space 1}    6.33{col 55}{space 3}0.000{col 63}{space 4} .7009103{col 76}{space 3} 1.330188
+{txt}{space 19}v6 {c |}{col 23}{res}{space 2}-.7363087{col 35}{space 2} .4308021{col 46}{space 1}   -1.71{col 55}{space 3}0.087{col 63}{space 4}-1.580665{col 76}{space 3}  .108048
+{txt}{space 19}v7 {c |}{col 23}{res}{space 2} -.718151{col 35}{space 2} .4272788{col 46}{space 1}   -1.68{col 55}{space 3}0.093{col 63}{space 4}-1.555602{col 76}{space 3} .1193001
+{txt}{space 19}v8 {c |}{col 23}{res}{space 2}-.3453708{col 35}{space 2} .3322504{col 46}{space 1}   -1.04{col 55}{space 3}0.299{col 63}{space 4}-.9965696{col 76}{space 3} .3058281
+{txt}{space 19}v9 {c |}{col 23}{res}{space 2}-.4650535{col 35}{space 2}  .346807{col 46}{space 1}   -1.34{col 55}{space 3}0.180{col 63}{space 4}-1.144783{col 76}{space 3} .2146758
+{txt}{space 18}v10 {c |}{col 23}{res}{space 2}-.5736709{col 35}{space 2} .3619063{col 46}{space 1}   -1.59{col 55}{space 3}0.113{col 63}{space 4}-1.282994{col 76}{space 3} .1356524
+{txt}{space 18}v11 {c |}{col 23}{res}{space 2}-.6081001{col 35}{space 2} .3045908{col 46}{space 1}   -2.00{col 55}{space 3}0.046{col 63}{space 4}-1.205087{col 76}{space 3}-.0111131
+{txt}{space 18}v12 {c |}{col 23}{res}{space 2}-.4354979{col 35}{space 2} .2511931{col 46}{space 1}   -1.73{col 55}{space 3}0.083{col 63}{space 4}-.9278274{col 76}{space 3} .0568315
+{txt}{space 18}v13 {c |}{col 23}{res}{space 2}-.1963523{col 35}{space 2} .1402983{col 46}{space 1}   -1.40{col 55}{space 3}0.162{col 63}{space 4}-.4713318{col 76}{space 3} .0786273
+{txt}{space 18}v14 {c |}{col 23}{res}{space 2}-.1431995{col 35}{space 2} .0839146{col 46}{space 1}   -1.71{col 55}{space 3}0.088{col 63}{space 4}-.3076691{col 76}{space 3} .0212702
+{txt}{space 18}v15 {c |}{col 23}{res}{space 2} .2109343{col 35}{space 2} .0920681{col 46}{space 1}    2.29{col 55}{space 3}0.022{col 63}{space 4} .0304841{col 76}{space 3} .3913845
+{txt}{space 18}v17 {c |}{col 23}{res}{space 2} .0231148{col 35}{space 2} .0537469{col 46}{space 1}    0.43{col 55}{space 3}0.667{col 63}{space 4}-.0822272{col 76}{space 3} .1284568
+{txt}{space 18}v18 {c |}{col 23}{res}{space 2}-.1815287{col 35}{space 2} .0880649{col 46}{space 1}   -2.06{col 55}{space 3}0.039{col 63}{space 4}-.3541327{col 76}{space 3}-.0089248
+{txt}{space 18}v19 {c |}{col 23}{res}{space 2}-.3082388{col 35}{space 2} .1682688{col 46}{space 1}   -1.83{col 55}{space 3}0.067{col 63}{space 4}-.6380396{col 76}{space 3}  .021562
+{txt}{space 18}v20 {c |}{col 23}{res}{space 2} -.645745{col 35}{space 2} .2224546{col 46}{space 1}   -2.90{col 55}{space 3}0.004{col 63}{space 4}-1.081748{col 76}{space 3}-.2097421
+{txt}{space 18}v21 {c |}{col 23}{res}{space 2}-.5903296{col 35}{space 2} .2279299{col 46}{space 1}   -2.59{col 55}{space 3}0.010{col 63}{space 4}-1.037064{col 76}{space 3}-.1435952
+{txt}{space 18}v22 {c |}{col 23}{res}{space 2}-.4402242{col 35}{space 2} .1727806{col 46}{space 1}   -2.55{col 55}{space 3}0.011{col 63}{space 4}-.7788679{col 76}{space 3}-.1015804
+{txt}{space 18}v23 {c |}{col 23}{res}{space 2}-.3421791{col 35}{space 2} .1971898{col 46}{space 1}   -1.74{col 55}{space 3}0.083{col 63}{space 4} -.728664{col 76}{space 3} .0443058
+{txt}{space 18}v24 {c |}{col 23}{res}{space 2}-.1218433{col 35}{space 2} .1630666{col 46}{space 1}   -0.75{col 55}{space 3}0.455{col 63}{space 4} -.441448{col 76}{space 3} .1977613
+{txt}{space 18}v25 {c |}{col 23}{res}{space 2} .0381748{col 35}{space 2} .1243925{col 46}{space 1}    0.31{col 55}{space 3}0.759{col 63}{space 4}  -.20563{col 76}{space 3} .2819797
+{txt}{space 18}v26 {c |}{col 23}{res}{space 2}-.2490035{col 35}{space 2} .1628344{col 46}{space 1}   -1.53{col 55}{space 3}0.126{col 63}{space 4} -.568153{col 76}{space 3} .0701461
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+({res}est1{txt} stored)
+
+{com}. lincom death_hat1 + death_hat2 + death_hat3 + death_hat4 + death_hat5 
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[granted_count]death_hat1 + [granted_count]death_hat2 + [granted_count]death_hat3 + [granted_count]death_hat4 + [granted_count]death_hat5 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}granted_co~t{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2}-11.91036{col 26}{space 2} 4.469498{col 37}{space 1}   -2.66{col 46}{space 3}0.008{col 54}{space 4}-20.67041{col 67}{space 3}-3.150303
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd scalar Cumulative = r(estimate)
+
+{txt}added scalar:
+         e(Cumulative) =  {res}-11.910359
+
+{com}. eststo: xtpoisson granted_count lag_k_stock   death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6  floodks_hat   gdp_per_capita_lag polity control_total_patents v6-v26, fe vce(robust)
+{txt}note: {bf:v6} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-95341.003}  
+Iteration 1:{space 3}log pseudolikelihood = {res: -15327.93}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-11646.657}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-11631.166}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-11631.164}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-11631.164}  
+{res}
+{txt}{col 1}Conditional fixed-effects Poisson regression{col 51}{lalign 16:Number of obs}{col 67} = {res}{ralign 9:739}
+{txt}{col 1}{txt}Group variable: {res}panelvar{txt}{col 51}{lalign 16:Number of groups}{col 67} = {res}{ralign 9:39}
+
+{txt}{col 51}Obs per group:
+{col 51}{ralign 16:min}{col 67} = {res}{ralign 9:9}
+{txt}{col 51}{ralign 16:avg}{col 67} = {res}{ralign 9:18.9}
+{txt}{col 51}{ralign 16:max}{col 67} = {res}{ralign 9:20}
+
+{txt}{col 51}{lalign 16:Wald chi2({res:30})}{col 67} = {res}{ralign 9:356540.88}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-11631.164}{txt}{col 51}{lalign 16:Prob > chi2}{col 67} = {res}{ralign 9:0.0000}
+
+{txt}{ralign 87:(Std. err. adjusted for clustering on {res:panelvar})}
+{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 23}{c |}{col 35}    Robust
+{col 1}        granted_count{col 23}{c |} Coefficient{col 35}  std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}lag_k_stock {c |}{col 23}{res}{space 2} .0063092{col 35}{space 2} .0023459{col 46}{space 1}    2.69{col 55}{space 3}0.007{col 63}{space 4} .0017112{col 76}{space 3} .0109071
+{txt}{space 11}death_hat1 {c |}{col 23}{res}{space 2}-2.610676{col 35}{space 2} 1.155239{col 46}{space 1}   -2.26{col 55}{space 3}0.024{col 63}{space 4}-4.874903{col 76}{space 3}-.3464492
+{txt}{space 11}death_hat2 {c |}{col 23}{res}{space 2}-1.753852{col 35}{space 2}  .684821{col 46}{space 1}   -2.56{col 55}{space 3}0.010{col 63}{space 4}-3.096076{col 76}{space 3}-.4116272
+{txt}{space 11}death_hat3 {c |}{col 23}{res}{space 2}-3.161261{col 35}{space 2} 1.132481{col 46}{space 1}   -2.79{col 55}{space 3}0.005{col 63}{space 4}-5.380884{col 76}{space 3}-.9416387
+{txt}{space 11}death_hat4 {c |}{col 23}{res}{space 2} -3.07636{col 35}{space 2} 1.472297{col 46}{space 1}   -2.09{col 55}{space 3}0.037{col 63}{space 4}-5.962009{col 76}{space 3} -.190711
+{txt}{space 11}death_hat5 {c |}{col 23}{res}{space 2}-2.239421{col 35}{space 2} .8499318{col 46}{space 1}   -2.63{col 55}{space 3}0.008{col 63}{space 4}-3.905257{col 76}{space 3}-.5735852
+{txt}{space 11}death_hat6 {c |}{col 23}{res}{space 2}-1.703471{col 35}{space 2} .5617915{col 46}{space 1}   -3.03{col 55}{space 3}0.002{col 63}{space 4}-2.804562{col 76}{space 3}-.6023802
+{txt}{space 10}floodks_hat {c |}{col 23}{res}{space 2}-.4406505{col 35}{space 2} .6915007{col 46}{space 1}   -0.64{col 55}{space 3}0.524{col 63}{space 4}-1.795967{col 76}{space 3} .9146661
+{txt}{space 3}gdp_per_capita_lag {c |}{col 23}{res}{space 2}-.9256554{col 35}{space 2} 1.191522{col 46}{space 1}   -0.78{col 55}{space 3}0.437{col 63}{space 4}-3.260995{col 76}{space 3} 1.409685
+{txt}{space 15}polity {c |}{col 23}{res}{space 2} .1274605{col 35}{space 2} .0462096{col 46}{space 1}    2.76{col 55}{space 3}0.006{col 63}{space 4} .0368913{col 76}{space 3} .2180297
+{txt}control_total_patents {c |}{col 23}{res}{space 2} 1.071128{col 35}{space 2} .1544185{col 46}{space 1}    6.94{col 55}{space 3}0.000{col 63}{space 4}  .768473{col 76}{space 3} 1.373782
+{txt}{space 19}v7 {c |}{col 23}{res}{space 2}-.7855532{col 35}{space 2} .4367753{col 46}{space 1}   -1.80{col 55}{space 3}0.072{col 63}{space 4}-1.641617{col 76}{space 3} .0705107
+{txt}{space 19}v8 {c |}{col 23}{res}{space 2}-.5204433{col 35}{space 2} .3549695{col 46}{space 1}   -1.47{col 55}{space 3}0.143{col 63}{space 4}-1.216171{col 76}{space 3} .1752842
+{txt}{space 19}v9 {c |}{col 23}{res}{space 2}-.5799675{col 35}{space 2} .3494544{col 46}{space 1}   -1.66{col 55}{space 3}0.097{col 63}{space 4}-1.264886{col 76}{space 3} .1049506
+{txt}{space 18}v10 {c |}{col 23}{res}{space 2}-.5791309{col 35}{space 2} .3523028{col 46}{space 1}   -1.64{col 55}{space 3}0.100{col 63}{space 4}-1.269632{col 76}{space 3} .1113698
+{txt}{space 18}v11 {c |}{col 23}{res}{space 2}-.6698014{col 35}{space 2} .3158944{col 46}{space 1}   -2.12{col 55}{space 3}0.034{col 63}{space 4}-1.288943{col 76}{space 3}-.0506598
+{txt}{space 18}v12 {c |}{col 23}{res}{space 2}-.6232896{col 35}{space 2} .2774978{col 46}{space 1}   -2.25{col 55}{space 3}0.025{col 63}{space 4}-1.167175{col 76}{space 3}-.0794039
+{txt}{space 18}v13 {c |}{col 23}{res}{space 2}-.2923289{col 35}{space 2} .1628857{col 46}{space 1}   -1.79{col 55}{space 3}0.073{col 63}{space 4}-.6115789{col 76}{space 3} .0269212
+{txt}{space 18}v14 {c |}{col 23}{res}{space 2}-.2778394{col 35}{space 2} .1168868{col 46}{space 1}   -2.38{col 55}{space 3}0.017{col 63}{space 4}-.5069333{col 76}{space 3}-.0487455
+{txt}{space 18}v15 {c |}{col 23}{res}{space 2} .1615554{col 35}{space 2} .1068692{col 46}{space 1}    1.51{col 55}{space 3}0.131{col 63}{space 4}-.0479044{col 76}{space 3} .3710152
+{txt}{space 18}v17 {c |}{col 23}{res}{space 2} .0139757{col 35}{space 2} .0442661{col 46}{space 1}    0.32{col 55}{space 3}0.752{col 63}{space 4}-.0727843{col 76}{space 3} .1007358
+{txt}{space 18}v18 {c |}{col 23}{res}{space 2}-.1287357{col 35}{space 2} .0852748{col 46}{space 1}   -1.51{col 55}{space 3}0.131{col 63}{space 4}-.2958713{col 76}{space 3} .0383998
+{txt}{space 18}v19 {c |}{col 23}{res}{space 2}-.3706486{col 35}{space 2} .1588922{col 46}{space 1}   -2.33{col 55}{space 3}0.020{col 63}{space 4}-.6820717{col 76}{space 3}-.0592256
+{txt}{space 18}v20 {c |}{col 23}{res}{space 2}-.5838482{col 35}{space 2}  .222973{col 46}{space 1}   -2.62{col 55}{space 3}0.009{col 63}{space 4}-1.020867{col 76}{space 3}-.1468291
+{txt}{space 18}v21 {c |}{col 23}{res}{space 2}-.7490016{col 35}{space 2} .2506243{col 46}{space 1}   -2.99{col 55}{space 3}0.003{col 63}{space 4}-1.240216{col 76}{space 3} -.257787
+{txt}{space 18}v22 {c |}{col 23}{res}{space 2}-.5865784{col 35}{space 2} .2072279{col 46}{space 1}   -2.83{col 55}{space 3}0.005{col 63}{space 4}-.9927376{col 76}{space 3}-.1804191
+{txt}{space 18}v23 {c |}{col 23}{res}{space 2}-.5553473{col 35}{space 2} .2355844{col 46}{space 1}   -2.36{col 55}{space 3}0.018{col 63}{space 4}-1.017084{col 76}{space 3}-.0936103
+{txt}{space 18}v24 {c |}{col 23}{res}{space 2}-.2750004{col 35}{space 2} .1978459{col 46}{space 1}   -1.39{col 55}{space 3}0.165{col 63}{space 4}-.6627712{col 76}{space 3} .1127704
+{txt}{space 18}v25 {c |}{col 23}{res}{space 2}-.1603268{col 35}{space 2} .1757919{col 46}{space 1}   -0.91{col 55}{space 3}0.362{col 63}{space 4}-.5048725{col 76}{space 3} .1842189
+{txt}{space 18}v26 {c |}{col 23}{res}{space 2}-.4141562{col 35}{space 2} .1940573{col 46}{space 1}   -2.13{col 55}{space 3}0.033{col 63}{space 4}-.7945014{col 76}{space 3}-.0338109
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+({res}est2{txt} stored)
+
+{com}. lincom death_hat1 + death_hat2 + death_hat3 + death_hat4 + death_hat5 + death_hat6 
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[granted_count]death_hat1 + [granted_count]death_hat2 + [granted_count]death_hat3 + [granted_count]death_hat4 + [granted_count]death_hat5 + [granted_count]death_hat6 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}granted_co~t{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2}-14.54504{col 26}{space 2} 4.863156{col 37}{space 1}   -2.99{col 46}{space 3}0.003{col 54}{space 4}-24.07665{col 67}{space 3} -5.01343
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd scalar Cumulative = r(estimate)
+
+{txt}added scalar:
+         e(Cumulative) =  {res}-14.545041
+
+{com}. eststo: xtpoisson granted_count lag_k_stock  death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7  floodks_hat   gdp_per_capita_lag polity control_total_patents v6-v26, fe vce(robust)
+{txt}note: {bf:v6} omitted because of collinearity.
+note: {bf:v7} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -86394.41}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-13801.395}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-10977.465}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-10969.539}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-10969.539}  
+{res}
+{txt}{col 1}Conditional fixed-effects Poisson regression{col 51}{lalign 16:Number of obs}{col 67} = {res}{ralign 9:706}
+{txt}{col 1}{txt}Group variable: {res}panelvar{txt}{col 51}{lalign 16:Number of groups}{col 67} = {res}{ralign 9:39}
+
+{txt}{col 51}Obs per group:
+{col 51}{ralign 16:min}{col 67} = {res}{ralign 9:9}
+{txt}{col 51}{ralign 16:avg}{col 67} = {res}{ralign 9:18.1}
+{txt}{col 51}{ralign 16:max}{col 67} = {res}{ralign 9:19}
+
+{txt}{col 51}{lalign 16:Wald chi2({res:30})}{col 67} = {res}{ralign 9:474418.21}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-10969.539}{txt}{col 51}{lalign 16:Prob > chi2}{col 67} = {res}{ralign 9:0.0000}
+
+{txt}{ralign 87:(Std. err. adjusted for clustering on {res:panelvar})}
+{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 23}{c |}{col 35}    Robust
+{col 1}        granted_count{col 23}{c |} Coefficient{col 35}  std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}lag_k_stock {c |}{col 23}{res}{space 2} .0060562{col 35}{space 2} .0025226{col 46}{space 1}    2.40{col 55}{space 3}0.016{col 63}{space 4}  .001112{col 76}{space 3} .0110004
+{txt}{space 11}death_hat1 {c |}{col 23}{res}{space 2}-2.425638{col 35}{space 2} 1.177621{col 46}{space 1}   -2.06{col 55}{space 3}0.039{col 63}{space 4}-4.733732{col 76}{space 3}-.1175439
+{txt}{space 11}death_hat2 {c |}{col 23}{res}{space 2}-1.794786{col 35}{space 2} .6941499{col 46}{space 1}   -2.59{col 55}{space 3}0.010{col 63}{space 4}-3.155295{col 76}{space 3}-.4342776
+{txt}{space 11}death_hat3 {c |}{col 23}{res}{space 2} -3.28193{col 35}{space 2} 1.124235{col 46}{space 1}   -2.92{col 55}{space 3}0.004{col 63}{space 4} -5.48539{col 76}{space 3}-1.078471
+{txt}{space 11}death_hat4 {c |}{col 23}{res}{space 2}-3.429323{col 35}{space 2} 1.647218{col 46}{space 1}   -2.08{col 55}{space 3}0.037{col 63}{space 4}-6.657812{col 76}{space 3}-.2008349
+{txt}{space 11}death_hat5 {c |}{col 23}{res}{space 2} -2.81205{col 35}{space 2} .9126318{col 46}{space 1}   -3.08{col 55}{space 3}0.002{col 63}{space 4}-4.600776{col 76}{space 3}-1.023325
+{txt}{space 11}death_hat6 {c |}{col 23}{res}{space 2}-2.275463{col 35}{space 2} .6070557{col 46}{space 1}   -3.75{col 55}{space 3}0.000{col 63}{space 4} -3.46527{col 76}{space 3}-1.085656
+{txt}{space 11}death_hat7 {c |}{col 23}{res}{space 2}-2.426424{col 35}{space 2} .4663864{col 46}{space 1}   -5.20{col 55}{space 3}0.000{col 63}{space 4}-3.340525{col 76}{space 3}-1.512324
+{txt}{space 10}floodks_hat {c |}{col 23}{res}{space 2} -.572289{col 35}{space 2} .6601202{col 46}{space 1}   -0.87{col 55}{space 3}0.386{col 63}{space 4}-1.866101{col 76}{space 3} .7215229
+{txt}{space 3}gdp_per_capita_lag {c |}{col 23}{res}{space 2}-.4853974{col 35}{space 2} 1.073855{col 46}{space 1}   -0.45{col 55}{space 3}0.651{col 63}{space 4}-2.590115{col 76}{space 3} 1.619321
+{txt}{space 15}polity {c |}{col 23}{res}{space 2} .1255682{col 35}{space 2} .0464148{col 46}{space 1}    2.71{col 55}{space 3}0.007{col 63}{space 4} .0345968{col 76}{space 3} .2165395
+{txt}control_total_patents {c |}{col 23}{res}{space 2} 1.117896{col 35}{space 2} .1471978{col 46}{space 1}    7.59{col 55}{space 3}0.000{col 63}{space 4} .8293933{col 76}{space 3} 1.406398
+{txt}{space 19}v8 {c |}{col 23}{res}{space 2}-.5095658{col 35}{space 2} .3589745{col 46}{space 1}   -1.42{col 55}{space 3}0.156{col 63}{space 4}-1.213143{col 76}{space 3} .1940113
+{txt}{space 19}v9 {c |}{col 23}{res}{space 2}-.7138225{col 35}{space 2}  .377128{col 46}{space 1}   -1.89{col 55}{space 3}0.058{col 63}{space 4} -1.45298{col 76}{space 3} .0253347
+{txt}{space 18}v10 {c |}{col 23}{res}{space 2}-.6286069{col 35}{space 2} .3667338{col 46}{space 1}   -1.71{col 55}{space 3}0.087{col 63}{space 4}-1.347392{col 76}{space 3} .0901782
+{txt}{space 18}v11 {c |}{col 23}{res}{space 2}-.5917237{col 35}{space 2} .3147381{col 46}{space 1}   -1.88{col 55}{space 3}0.060{col 63}{space 4}-1.208599{col 76}{space 3} .0251516
+{txt}{space 18}v12 {c |}{col 23}{res}{space 2}  -.63683{col 35}{space 2} .2932901{col 46}{space 1}   -2.17{col 55}{space 3}0.030{col 63}{space 4}-1.211668{col 76}{space 3} -.061992
+{txt}{space 18}v13 {c |}{col 23}{res}{space 2}-.4923441{col 35}{space 2} .1960356{col 46}{space 1}   -2.51{col 55}{space 3}0.012{col 63}{space 4}-.8765668{col 76}{space 3}-.1081214
+{txt}{space 18}v14 {c |}{col 23}{res}{space 2}-.3472196{col 35}{space 2} .1351335{col 46}{space 1}   -2.57{col 55}{space 3}0.010{col 63}{space 4}-.6120764{col 76}{space 3}-.0823627
+{txt}{space 18}v15 {c |}{col 23}{res}{space 2} .0202957{col 35}{space 2} .0936389{col 46}{space 1}    0.22{col 55}{space 3}0.828{col 63}{space 4}-.1632331{col 76}{space 3} .2038246
+{txt}{space 18}v17 {c |}{col 23}{res}{space 2}   .06955{col 35}{space 2} .0439862{col 46}{space 1}    1.58{col 55}{space 3}0.114{col 63}{space 4}-.0166614{col 76}{space 3} .1557613
+{txt}{space 18}v18 {c |}{col 23}{res}{space 2}-.0753833{col 35}{space 2} .0765523{col 46}{space 1}   -0.98{col 55}{space 3}0.325{col 63}{space 4}-.2254231{col 76}{space 3} .0746565
+{txt}{space 18}v19 {c |}{col 23}{res}{space 2}-.2673999{col 35}{space 2} .1634247{col 46}{space 1}   -1.64{col 55}{space 3}0.102{col 63}{space 4}-.5877064{col 76}{space 3} .0529066
+{txt}{space 18}v20 {c |}{col 23}{res}{space 2}-.6183343{col 35}{space 2} .2201468{col 46}{space 1}   -2.81{col 55}{space 3}0.005{col 63}{space 4}-1.049814{col 76}{space 3}-.1868544
+{txt}{space 18}v21 {c |}{col 23}{res}{space 2}-.6524398{col 35}{space 2} .2642939{col 46}{space 1}   -2.47{col 55}{space 3}0.014{col 63}{space 4}-1.170446{col 76}{space 3}-.1344332
+{txt}{space 18}v22 {c |}{col 23}{res}{space 2} -.798724{col 35}{space 2} .2425777{col 46}{space 1}   -3.29{col 55}{space 3}0.001{col 63}{space 4}-1.274168{col 76}{space 3}-.3232805
+{txt}{space 18}v23 {c |}{col 23}{res}{space 2}-.7741118{col 35}{space 2} .2881693{col 46}{space 1}   -2.69{col 55}{space 3}0.007{col 63}{space 4}-1.338913{col 76}{space 3}-.2093102
+{txt}{space 18}v24 {c |}{col 23}{res}{space 2}-.5994544{col 35}{space 2} .2496111{col 46}{space 1}   -2.40{col 55}{space 3}0.016{col 63}{space 4}-1.088683{col 76}{space 3}-.1102257
+{txt}{space 18}v25 {c |}{col 23}{res}{space 2}-.3941568{col 35}{space 2} .2035736{col 46}{space 1}   -1.94{col 55}{space 3}0.053{col 63}{space 4}-.7931538{col 76}{space 3} .0048401
+{txt}{space 18}v26 {c |}{col 23}{res}{space 2}-.6973519{col 35}{space 2} .2447619{col 46}{space 1}   -2.85{col 55}{space 3}0.004{col 63}{space 4}-1.177076{col 76}{space 3}-.2176273
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+({res}est3{txt} stored)
+
+{com}. lincom death_hat1 + death_hat2 + death_hat3 + death_hat4 + death_hat5 + death_hat6 + death_hat7 
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[granted_count]death_hat1 + [granted_count]death_hat2 + [granted_count]death_hat3 + [granted_count]death_hat4 + [granted_count]death_hat5 + [granted_count]death_hat6 + [granted_count]death_hat7 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}granted_co~t{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2}-18.44562{col 26}{space 2} 5.759721{col 37}{space 1}   -3.20{col 46}{space 3}0.001{col 54}{space 4}-29.73446{col 67}{space 3} -7.15677
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd scalar Cumulative = r(estimate)
+
+{txt}added scalar:
+         e(Cumulative) =  {res}-18.445616
+
+{com}. eststo: xtpoisson granted_count lag_k_stock death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8   floodks_hat   gdp_per_capita_lag polity control_total_patents v6-v26, fe vce(robust)
+{txt}note: {bf:v6} omitted because of collinearity.
+note: {bf:v7} omitted because of collinearity.
+note: {bf:v8} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-79104.858}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-12694.834}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-10401.232}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-10396.103}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-10396.103}  
+{res}
+{txt}{col 1}Conditional fixed-effects Poisson regression{col 51}{lalign 16:Number of obs}{col 67} = {res}{ralign 9:672}
+{txt}{col 1}{txt}Group variable: {res}panelvar{txt}{col 51}{lalign 16:Number of groups}{col 67} = {res}{ralign 9:39}
+
+{txt}{col 51}Obs per group:
+{col 51}{ralign 16:min}{col 67} = {res}{ralign 9:9}
+{txt}{col 51}{ralign 16:avg}{col 67} = {res}{ralign 9:17.2}
+{txt}{col 51}{ralign 16:max}{col 67} = {res}{ralign 9:18}
+
+{txt}{col 51}{lalign 16:Wald chi2({res:30})}{col 67} = {res}{ralign 9:818918.87}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-10396.103}{txt}{col 51}{lalign 16:Prob > chi2}{col 67} = {res}{ralign 9:0.0000}
+
+{txt}{ralign 87:(Std. err. adjusted for clustering on {res:panelvar})}
+{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 23}{c |}{col 35}    Robust
+{col 1}        granted_count{col 23}{c |} Coefficient{col 35}  std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}lag_k_stock {c |}{col 23}{res}{space 2} .0063681{col 35}{space 2}  .002805{col 46}{space 1}    2.27{col 55}{space 3}0.023{col 63}{space 4} .0008704{col 76}{space 3} .0118659
+{txt}{space 11}death_hat1 {c |}{col 23}{res}{space 2}-2.691826{col 35}{space 2} 1.086588{col 46}{space 1}   -2.48{col 55}{space 3}0.013{col 63}{space 4}  -4.8215{col 76}{space 3}-.5621514
+{txt}{space 11}death_hat2 {c |}{col 23}{res}{space 2}-1.517453{col 35}{space 2} .6951381{col 46}{space 1}   -2.18{col 55}{space 3}0.029{col 63}{space 4}-2.879898{col 76}{space 3}-.1550069
+{txt}{space 11}death_hat3 {c |}{col 23}{res}{space 2}-3.192225{col 35}{space 2} 1.112751{col 46}{space 1}   -2.87{col 55}{space 3}0.004{col 63}{space 4}-5.373176{col 76}{space 3}-1.011273
+{txt}{space 11}death_hat4 {c |}{col 23}{res}{space 2}-3.431122{col 35}{space 2} 1.570909{col 46}{space 1}   -2.18{col 55}{space 3}0.029{col 63}{space 4}-6.510046{col 76}{space 3}-.3521973
+{txt}{space 11}death_hat5 {c |}{col 23}{res}{space 2}-2.933356{col 35}{space 2} .8926845{col 46}{space 1}   -3.29{col 55}{space 3}0.001{col 63}{space 4}-4.682985{col 76}{space 3}-1.183726
+{txt}{space 11}death_hat6 {c |}{col 23}{res}{space 2}-2.624245{col 35}{space 2} .6578794{col 46}{space 1}   -3.99{col 55}{space 3}0.000{col 63}{space 4}-3.913665{col 76}{space 3}-1.334825
+{txt}{space 11}death_hat7 {c |}{col 23}{res}{space 2}-2.490714{col 35}{space 2} .5671833{col 46}{space 1}   -4.39{col 55}{space 3}0.000{col 63}{space 4}-3.602373{col 76}{space 3}-1.379055
+{txt}{space 11}death_hat8 {c |}{col 23}{res}{space 2}-.9060744{col 35}{space 2} .8267016{col 46}{space 1}   -1.10{col 55}{space 3}0.273{col 63}{space 4} -2.52638{col 76}{space 3} .7142309
+{txt}{space 10}floodks_hat {c |}{col 23}{res}{space 2}-.3610903{col 35}{space 2} .6368401{col 46}{space 1}   -0.57{col 55}{space 3}0.571{col 63}{space 4}-1.609274{col 76}{space 3} .8870933
+{txt}{space 3}gdp_per_capita_lag {c |}{col 23}{res}{space 2}-.6779553{col 35}{space 2} 1.200547{col 46}{space 1}   -0.56{col 55}{space 3}0.572{col 63}{space 4}-3.030984{col 76}{space 3} 1.675073
+{txt}{space 15}polity {c |}{col 23}{res}{space 2} .1167023{col 35}{space 2} .0463642{col 46}{space 1}    2.52{col 55}{space 3}0.012{col 63}{space 4} .0258301{col 76}{space 3} .2075744
+{txt}control_total_patents {c |}{col 23}{res}{space 2} 1.186573{col 35}{space 2} .1448625{col 46}{space 1}    8.19{col 55}{space 3}0.000{col 63}{space 4} .9026475{col 76}{space 3} 1.470498
+{txt}{space 19}v9 {c |}{col 23}{res}{space 2}-.6586701{col 35}{space 2} .4000927{col 46}{space 1}   -1.65{col 55}{space 3}0.100{col 63}{space 4}-1.442837{col 76}{space 3} .1254972
+{txt}{space 18}v10 {c |}{col 23}{res}{space 2}-.5869525{col 35}{space 2} .3740441{col 46}{space 1}   -1.57{col 55}{space 3}0.117{col 63}{space 4}-1.320065{col 76}{space 3} .1461604
+{txt}{space 18}v11 {c |}{col 23}{res}{space 2}-.5139248{col 35}{space 2} .3253012{col 46}{space 1}   -1.58{col 55}{space 3}0.114{col 63}{space 4}-1.151503{col 76}{space 3} .1236538
+{txt}{space 18}v12 {c |}{col 23}{res}{space 2}-.5388728{col 35}{space 2}  .327239{col 46}{space 1}   -1.65{col 55}{space 3}0.100{col 63}{space 4}-1.180249{col 76}{space 3} .1025038
+{txt}{space 18}v13 {c |}{col 23}{res}{space 2}-.3943219{col 35}{space 2} .2060738{col 46}{space 1}   -1.91{col 55}{space 3}0.056{col 63}{space 4} -.798219{col 76}{space 3} .0095753
+{txt}{space 18}v14 {c |}{col 23}{res}{space 2}-.3438403{col 35}{space 2} .1257661{col 46}{space 1}   -2.73{col 55}{space 3}0.006{col 63}{space 4}-.5903373{col 76}{space 3}-.0973433
+{txt}{space 18}v15 {c |}{col 23}{res}{space 2}  .109575{col 35}{space 2} .0877483{col 46}{space 1}    1.25{col 55}{space 3}0.212{col 63}{space 4}-.0624085{col 76}{space 3} .2815585
+{txt}{space 18}v17 {c |}{col 23}{res}{space 2} .1427477{col 35}{space 2} .0683552{col 46}{space 1}    2.09{col 55}{space 3}0.037{col 63}{space 4}  .008774{col 76}{space 3} .2767214
+{txt}{space 18}v18 {c |}{col 23}{res}{space 2} .0176673{col 35}{space 2} .0746388{col 46}{space 1}    0.24{col 55}{space 3}0.813{col 63}{space 4}-.1286221{col 76}{space 3} .1639568
+{txt}{space 18}v19 {c |}{col 23}{res}{space 2}-.1669606{col 35}{space 2} .1566165{col 46}{space 1}   -1.07{col 55}{space 3}0.286{col 63}{space 4}-.4739233{col 76}{space 3} .1400021
+{txt}{space 18}v20 {c |}{col 23}{res}{space 2}-.4881913{col 35}{space 2} .2275171{col 46}{space 1}   -2.15{col 55}{space 3}0.032{col 63}{space 4}-.9341166{col 76}{space 3}-.0422659
+{txt}{space 18}v21 {c |}{col 23}{res}{space 2}-.5851243{col 35}{space 2} .2380401{col 46}{space 1}   -2.46{col 55}{space 3}0.014{col 63}{space 4}-1.051674{col 76}{space 3}-.1185744
+{txt}{space 18}v22 {c |}{col 23}{res}{space 2}-.6693831{col 35}{space 2} .2417466{col 46}{space 1}   -2.77{col 55}{space 3}0.006{col 63}{space 4}-1.143198{col 76}{space 3}-.1955684
+{txt}{space 18}v23 {c |}{col 23}{res}{space 2}-.7684211{col 35}{space 2} .2747071{col 46}{space 1}   -2.80{col 55}{space 3}0.005{col 63}{space 4}-1.306837{col 76}{space 3} -.230005
+{txt}{space 18}v24 {c |}{col 23}{res}{space 2}-.5690959{col 35}{space 2} .2620418{col 46}{space 1}   -2.17{col 55}{space 3}0.030{col 63}{space 4}-1.082688{col 76}{space 3}-.0555035
+{txt}{space 18}v25 {c |}{col 23}{res}{space 2}-.4445651{col 35}{space 2} .2361125{col 46}{space 1}   -1.88{col 55}{space 3}0.060{col 63}{space 4}-.9073372{col 76}{space 3}  .018207
+{txt}{space 18}v26 {c |}{col 23}{res}{space 2}-.7194154{col 35}{space 2} .2368701{col 46}{space 1}   -3.04{col 55}{space 3}0.002{col 63}{space 4}-1.183672{col 76}{space 3}-.2551586
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+({res}est4{txt} stored)
+
+{com}. lincom death_hat1 + death_hat2 + death_hat3 + death_hat4 + death_hat5 + death_hat6 + death_hat7 + death_hat8 
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[granted_count]death_hat1 + [granted_count]death_hat2 + [granted_count]death_hat3 + [granted_count]death_hat4 + [granted_count]death_hat5 + [granted_count]death_hat6 + [granted_count]death_hat7 + [granted_count]death_hat8 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}granted_co~t{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2}-19.78701{col 26}{space 2} 5.317358{col 37}{space 1}   -3.72{col 46}{space 3}0.000{col 54}{space 4}-30.20884{col 67}{space 3}-9.365183
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd scalar Cumulative = r(estimate)
+
+{txt}added scalar:
+         e(Cumulative) =  {res}-19.787014
+
+{com}. eststo: xtpoisson granted_count lag_k_stock death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9  floodks_hat   gdp_per_capita_lag polity control_total_patents v6-v26, fe vce(robust)
+{txt}note: {bf:v6} omitted because of collinearity.
+note: {bf:v7} omitted because of collinearity.
+note: {bf:v8} omitted because of collinearity.
+note: {bf:v9} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-72333.133}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-11480.623}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-9529.4559}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-9525.7988}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-9525.7987}  
+{res}
+{txt}{col 1}Conditional fixed-effects Poisson regression{col 51}{lalign 16:Number of obs}{col 67} = {res}{ralign 9:638}
+{txt}{col 1}{txt}Group variable: {res}panelvar{txt}{col 51}{lalign 16:Number of groups}{col 67} = {res}{ralign 9:39}
+
+{txt}{col 51}Obs per group:
+{col 51}{ralign 16:min}{col 67} = {res}{ralign 9:9}
+{txt}{col 51}{ralign 16:avg}{col 67} = {res}{ralign 9:16.4}
+{txt}{col 51}{ralign 16:max}{col 67} = {res}{ralign 9:17}
+
+{txt}{col 51}{lalign 16:Wald chi2({res:30})}{col 67} = {res}{ralign 9:569270.86}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-9525.7987}{txt}{col 51}{lalign 16:Prob > chi2}{col 67} = {res}{ralign 9:0.0000}
+
+{txt}{ralign 87:(Std. err. adjusted for clustering on {res:panelvar})}
+{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 23}{c |}{col 35}    Robust
+{col 1}        granted_count{col 23}{c |} Coefficient{col 35}  std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}lag_k_stock {c |}{col 23}{res}{space 2} .0078359{col 35}{space 2} .0030333{col 46}{space 1}    2.58{col 55}{space 3}0.010{col 63}{space 4} .0018908{col 76}{space 3}  .013781
+{txt}{space 11}death_hat1 {c |}{col 23}{res}{space 2}-2.357676{col 35}{space 2} 1.064047{col 46}{space 1}   -2.22{col 55}{space 3}0.027{col 63}{space 4}-4.443169{col 76}{space 3}-.2721821
+{txt}{space 11}death_hat2 {c |}{col 23}{res}{space 2}-1.394195{col 35}{space 2} .7221591{col 46}{space 1}   -1.93{col 55}{space 3}0.054{col 63}{space 4}-2.809601{col 76}{space 3} .0212104
+{txt}{space 11}death_hat3 {c |}{col 23}{res}{space 2}-2.860415{col 35}{space 2} 1.049507{col 46}{space 1}   -2.73{col 55}{space 3}0.006{col 63}{space 4}-4.917411{col 76}{space 3}-.8034194
+{txt}{space 11}death_hat4 {c |}{col 23}{res}{space 2} -3.02972{col 35}{space 2} 1.462929{col 46}{space 1}   -2.07{col 55}{space 3}0.038{col 63}{space 4}-5.897008{col 76}{space 3}-.1624325
+{txt}{space 11}death_hat5 {c |}{col 23}{res}{space 2} -2.69936{col 35}{space 2} .8768274{col 46}{space 1}   -3.08{col 55}{space 3}0.002{col 63}{space 4}-4.417911{col 76}{space 3}-.9808102
+{txt}{space 11}death_hat6 {c |}{col 23}{res}{space 2}-2.126431{col 35}{space 2} .7869987{col 46}{space 1}   -2.70{col 55}{space 3}0.007{col 63}{space 4} -3.66892{col 76}{space 3}-.5839415
+{txt}{space 11}death_hat7 {c |}{col 23}{res}{space 2}-2.370078{col 35}{space 2} .8388599{col 46}{space 1}   -2.83{col 55}{space 3}0.005{col 63}{space 4}-4.014214{col 76}{space 3}-.7259431
+{txt}{space 11}death_hat8 {c |}{col 23}{res}{space 2}-.2418643{col 35}{space 2} 1.188076{col 46}{space 1}   -0.20{col 55}{space 3}0.839{col 63}{space 4}-2.570451{col 76}{space 3} 2.086722
+{txt}{space 11}death_hat9 {c |}{col 23}{res}{space 2} .6841909{col 35}{space 2} 1.090954{col 46}{space 1}    0.63{col 55}{space 3}0.531{col 63}{space 4}-1.454041{col 76}{space 3} 2.822422
+{txt}{space 10}floodks_hat {c |}{col 23}{res}{space 2} .3010259{col 35}{space 2} .7629954{col 46}{space 1}    0.39{col 55}{space 3}0.693{col 63}{space 4}-1.194418{col 76}{space 3}  1.79647
+{txt}{space 3}gdp_per_capita_lag {c |}{col 23}{res}{space 2}-2.026274{col 35}{space 2} 1.749232{col 46}{space 1}   -1.16{col 55}{space 3}0.247{col 63}{space 4}-5.454707{col 76}{space 3} 1.402158
+{txt}{space 15}polity {c |}{col 23}{res}{space 2}  .092406{col 35}{space 2}  .044955{col 46}{space 1}    2.06{col 55}{space 3}0.040{col 63}{space 4} .0042959{col 76}{space 3} .1805162
+{txt}control_total_patents {c |}{col 23}{res}{space 2}   1.1883{col 35}{space 2} .1500798{col 46}{space 1}    7.92{col 55}{space 3}0.000{col 63}{space 4} .8941487{col 76}{space 3} 1.482451
+{txt}{space 18}v10 {c |}{col 23}{res}{space 2}-.6794533{col 35}{space 2} .3980679{col 46}{space 1}   -1.71{col 55}{space 3}0.088{col 63}{space 4}-1.459652{col 76}{space 3} .1007454
+{txt}{space 18}v11 {c |}{col 23}{res}{space 2}  -.50075{col 35}{space 2} .3054184{col 46}{space 1}   -1.64{col 55}{space 3}0.101{col 63}{space 4}-1.099359{col 76}{space 3} .0978591
+{txt}{space 18}v12 {c |}{col 23}{res}{space 2}-.5780164{col 35}{space 2} .3263494{col 46}{space 1}   -1.77{col 55}{space 3}0.077{col 63}{space 4}-1.217649{col 76}{space 3} .0616167
+{txt}{space 18}v13 {c |}{col 23}{res}{space 2}-.4618032{col 35}{space 2} .2156643{col 46}{space 1}   -2.14{col 55}{space 3}0.032{col 63}{space 4}-.8844974{col 76}{space 3}-.0391089
+{txt}{space 18}v14 {c |}{col 23}{res}{space 2}-.3183234{col 35}{space 2} .1216564{col 46}{space 1}   -2.62{col 55}{space 3}0.009{col 63}{space 4}-.5567655{col 76}{space 3}-.0798813
+{txt}{space 18}v15 {c |}{col 23}{res}{space 2} .0864277{col 35}{space 2} .0989017{col 46}{space 1}    0.87{col 55}{space 3}0.382{col 63}{space 4}-.1074161{col 76}{space 3} .2802715
+{txt}{space 18}v17 {c |}{col 23}{res}{space 2} .1752174{col 35}{space 2} .0576813{col 46}{space 1}    3.04{col 55}{space 3}0.002{col 63}{space 4} .0621641{col 76}{space 3} .2882707
+{txt}{space 18}v18 {c |}{col 23}{res}{space 2}-.0080409{col 35}{space 2} .0732723{col 46}{space 1}   -0.11{col 55}{space 3}0.913{col 63}{space 4}-.1516521{col 76}{space 3} .1355702
+{txt}{space 18}v19 {c |}{col 23}{res}{space 2}-.1308808{col 35}{space 2} .1488551{col 46}{space 1}   -0.88{col 55}{space 3}0.379{col 63}{space 4}-.4226315{col 76}{space 3} .1608699
+{txt}{space 18}v20 {c |}{col 23}{res}{space 2}-.4400685{col 35}{space 2} .1888709{col 46}{space 1}   -2.33{col 55}{space 3}0.020{col 63}{space 4}-.8102486{col 76}{space 3}-.0698884
+{txt}{space 18}v21 {c |}{col 23}{res}{space 2}-.4346651{col 35}{space 2} .2195931{col 46}{space 1}   -1.98{col 55}{space 3}0.048{col 63}{space 4}-.8650597{col 76}{space 3}-.0042705
+{txt}{space 18}v22 {c |}{col 23}{res}{space 2}-.5656112{col 35}{space 2}  .218194{col 46}{space 1}   -2.59{col 55}{space 3}0.010{col 63}{space 4}-.9932635{col 76}{space 3}-.1379589
+{txt}{space 18}v23 {c |}{col 23}{res}{space 2}-.5723568{col 35}{space 2} .2906895{col 46}{space 1}   -1.97{col 55}{space 3}0.049{col 63}{space 4}-1.142098{col 76}{space 3}-.0026158
+{txt}{space 18}v24 {c |}{col 23}{res}{space 2}-.2976744{col 35}{space 2} .4009008{col 46}{space 1}   -0.74{col 55}{space 3}0.458{col 63}{space 4}-1.083426{col 76}{space 3} .4880767
+{txt}{space 18}v25 {c |}{col 23}{res}{space 2}-.2040687{col 35}{space 2} .3759001{col 46}{space 1}   -0.54{col 55}{space 3}0.587{col 63}{space 4}-.9408194{col 76}{space 3}  .532682
+{txt}{space 18}v26 {c |}{col 23}{res}{space 2}-.5270345{col 35}{space 2} .3322935{col 46}{space 1}   -1.59{col 55}{space 3}0.113{col 63}{space 4}-1.178318{col 76}{space 3} .1242488
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+({res}est5{txt} stored)
+
+{com}. lincom death_hat1 + death_hat2 + death_hat3 + death_hat4 + death_hat5 + death_hat6 + death_hat7 + death_hat8 + death_hat9 
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[granted_count]death_hat1 + [granted_count]death_hat2 + [granted_count]death_hat3 + [granted_count]death_hat4 + [granted_count]death_hat5 + [granted_count]death_hat6 + [granted_count]death_hat7 + [granted_count]death_hat8 + [granted_count]death_hat9 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}granted_co~t{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2}-16.39555{col 26}{space 2} 5.907546{col 37}{space 1}   -2.78{col 46}{space 3}0.006{col 54}{space 4}-27.97413{col 67}{space 3}-4.816972
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd scalar Cumulative = r(estimate)
+
+{txt}added scalar:
+         e(Cumulative) =  {res}-16.395549
+
+{com}. eststo: xtpoisson granted_count lag_k_stock death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10  floodks_hat   gdp_per_capita_lag polity control_total_patents v6-v26, fe vce(robust)
+{txt}note: {bf:v6} omitted because of collinearity.
+note: {bf:v7} omitted because of collinearity.
+note: {bf:v8} omitted because of collinearity.
+note: {bf:v9} omitted because of collinearity.
+note: {bf:v10} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -65393.87}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-10338.695}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-8730.6992}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-8728.5377}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-8728.5377}  
+{res}
+{txt}{col 1}Conditional fixed-effects Poisson regression{col 51}{lalign 16:Number of obs}{col 67} = {res}{ralign 9:601}
+{txt}{col 1}{txt}Group variable: {res}panelvar{txt}{col 51}{lalign 16:Number of groups}{col 67} = {res}{ralign 9:39}
+
+{txt}{col 51}Obs per group:
+{col 51}{ralign 16:min}{col 67} = {res}{ralign 9:8}
+{txt}{col 51}{ralign 16:avg}{col 67} = {res}{ralign 9:15.4}
+{txt}{col 51}{ralign 16:max}{col 67} = {res}{ralign 9:16}
+
+{txt}{col 51}{lalign 16:Wald chi2({res:30})}{col 67} = {res}{ralign 9:988629.07}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-8728.5377}{txt}{col 51}{lalign 16:Prob > chi2}{col 67} = {res}{ralign 9:0.0000}
+
+{txt}{ralign 87:(Std. err. adjusted for clustering on {res:panelvar})}
+{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 23}{c |}{col 35}    Robust
+{col 1}        granted_count{col 23}{c |} Coefficient{col 35}  std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}lag_k_stock {c |}{col 23}{res}{space 2} .0089603{col 35}{space 2} .0033153{col 46}{space 1}    2.70{col 55}{space 3}0.007{col 63}{space 4} .0024624{col 76}{space 3} .0154582
+{txt}{space 11}death_hat1 {c |}{col 23}{res}{space 2}-2.153817{col 35}{space 2} .9506719{col 46}{space 1}   -2.27{col 55}{space 3}0.023{col 63}{space 4}  -4.0171{col 76}{space 3}-.2905343
+{txt}{space 11}death_hat2 {c |}{col 23}{res}{space 2}-1.053977{col 35}{space 2} .8245212{col 46}{space 1}   -1.28{col 55}{space 3}0.201{col 63}{space 4}-2.670009{col 76}{space 3} .5620549
+{txt}{space 11}death_hat3 {c |}{col 23}{res}{space 2} -2.79571{col 35}{space 2} 1.044057{col 46}{space 1}   -2.68{col 55}{space 3}0.007{col 63}{space 4}-4.842025{col 76}{space 3}-.7493954
+{txt}{space 11}death_hat4 {c |}{col 23}{res}{space 2}-2.851675{col 35}{space 2} 1.495367{col 46}{space 1}   -1.91{col 55}{space 3}0.057{col 63}{space 4} -5.78254{col 76}{space 3} .0791895
+{txt}{space 11}death_hat5 {c |}{col 23}{res}{space 2}-2.449397{col 35}{space 2} .9416616{col 46}{space 1}   -2.60{col 55}{space 3}0.009{col 63}{space 4} -4.29502{col 76}{space 3}-.6037743
+{txt}{space 11}death_hat6 {c |}{col 23}{res}{space 2}-2.066507{col 35}{space 2} .8422703{col 46}{space 1}   -2.45{col 55}{space 3}0.014{col 63}{space 4}-3.717327{col 76}{space 3}-.4156877
+{txt}{space 11}death_hat7 {c |}{col 23}{res}{space 2}-1.991788{col 35}{space 2} .9406013{col 46}{space 1}   -2.12{col 55}{space 3}0.034{col 63}{space 4}-3.835332{col 76}{space 3} -.148243
+{txt}{space 11}death_hat8 {c |}{col 23}{res}{space 2}-.1456553{col 35}{space 2} 1.458762{col 46}{space 1}   -0.10{col 55}{space 3}0.920{col 63}{space 4}-3.004776{col 76}{space 3} 2.713466
+{txt}{space 11}death_hat9 {c |}{col 23}{res}{space 2}  1.22525{col 35}{space 2} 1.300357{col 46}{space 1}    0.94{col 55}{space 3}0.346{col 63}{space 4}-1.323403{col 76}{space 3} 3.773903
+{txt}{space 10}death_hat10 {c |}{col 23}{res}{space 2} 1.277363{col 35}{space 2} 1.068198{col 46}{space 1}    1.20{col 55}{space 3}0.232{col 63}{space 4} -.816266{col 76}{space 3} 3.370993
+{txt}{space 10}floodks_hat {c |}{col 23}{res}{space 2} .5631565{col 35}{space 2} .7860471{col 46}{space 1}    0.72{col 55}{space 3}0.474{col 63}{space 4}-.9774675{col 76}{space 3} 2.103781
+{txt}{space 3}gdp_per_capita_lag {c |}{col 23}{res}{space 2}-3.223515{col 35}{space 2} 2.154775{col 46}{space 1}   -1.50{col 55}{space 3}0.135{col 63}{space 4}-7.446795{col 76}{space 3}  .999766
+{txt}{space 15}polity {c |}{col 23}{res}{space 2} .0785785{col 35}{space 2} .0418053{col 46}{space 1}    1.88{col 55}{space 3}0.060{col 63}{space 4}-.0033583{col 76}{space 3} .1605153
+{txt}control_total_patents {c |}{col 23}{res}{space 2} 1.064498{col 35}{space 2} .2094624{col 46}{space 1}    5.08{col 55}{space 3}0.000{col 63}{space 4} .6539594{col 76}{space 3} 1.475037
+{txt}{space 18}v11 {c |}{col 23}{res}{space 2} -.667019{col 35}{space 2} .4061204{col 46}{space 1}   -1.64{col 55}{space 3}0.101{col 63}{space 4}   -1.463{col 76}{space 3} .1289624
+{txt}{space 18}v12 {c |}{col 23}{res}{space 2}-.6325634{col 35}{space 2} .3738456{col 46}{space 1}   -1.69{col 55}{space 3}0.091{col 63}{space 4}-1.365287{col 76}{space 3} .1001605
+{txt}{space 18}v13 {c |}{col 23}{res}{space 2}-.5390488{col 35}{space 2} .2867328{col 46}{space 1}   -1.88{col 55}{space 3}0.060{col 63}{space 4}-1.101035{col 76}{space 3} .0229373
+{txt}{space 18}v14 {c |}{col 23}{res}{space 2}-.4752855{col 35}{space 2} .1950305{col 46}{space 1}   -2.44{col 55}{space 3}0.015{col 63}{space 4}-.8575383{col 76}{space 3}-.0930327
+{txt}{space 18}v15 {c |}{col 23}{res}{space 2} .0087144{col 35}{space 2} .1069254{col 46}{space 1}    0.08{col 55}{space 3}0.935{col 63}{space 4}-.2008557{col 76}{space 3} .2182844
+{txt}{space 18}v17 {c |}{col 23}{res}{space 2} .2084731{col 35}{space 2} .0579811{col 46}{space 1}    3.60{col 55}{space 3}0.000{col 63}{space 4} .0948323{col 76}{space 3} .3221139
+{txt}{space 18}v18 {c |}{col 23}{res}{space 2} .0598845{col 35}{space 2} .0861997{col 46}{space 1}    0.69{col 55}{space 3}0.487{col 63}{space 4}-.1090638{col 76}{space 3} .2288328
+{txt}{space 18}v19 {c |}{col 23}{res}{space 2}-.0997677{col 35}{space 2} .1418462{col 46}{space 1}   -0.70{col 55}{space 3}0.482{col 63}{space 4} -.377781{col 76}{space 3} .1782457
+{txt}{space 18}v20 {c |}{col 23}{res}{space 2}-.3688218{col 35}{space 2} .2027518{col 46}{space 1}   -1.82{col 55}{space 3}0.069{col 63}{space 4} -.766208{col 76}{space 3} .0285644
+{txt}{space 18}v21 {c |}{col 23}{res}{space 2}  -.33284{col 35}{space 2} .2151596{col 46}{space 1}   -1.55{col 55}{space 3}0.122{col 63}{space 4}-.7545449{col 76}{space 3}  .088865
+{txt}{space 18}v22 {c |}{col 23}{res}{space 2}-.4504539{col 35}{space 2}  .223036{col 46}{space 1}   -2.02{col 55}{space 3}0.043{col 63}{space 4}-.8875964{col 76}{space 3}-.0133113
+{txt}{space 18}v23 {c |}{col 23}{res}{space 2}-.3941838{col 35}{space 2}  .325117{col 46}{space 1}   -1.21{col 55}{space 3}0.225{col 63}{space 4}-1.031401{col 76}{space 3} .2430338
+{txt}{space 18}v24 {c |}{col 23}{res}{space 2}-.1215853{col 35}{space 2} .4448306{col 46}{space 1}   -0.27{col 55}{space 3}0.785{col 63}{space 4}-.9934373{col 76}{space 3} .7502667
+{txt}{space 18}v25 {c |}{col 23}{res}{space 2} .0778956{col 35}{space 2} .5238578{col 46}{space 1}    0.15{col 55}{space 3}0.882{col 63}{space 4}-.9488468{col 76}{space 3} 1.104638
+{txt}{space 18}v26 {c |}{col 23}{res}{space 2}-.2522939{col 35}{space 2} .4582905{col 46}{space 1}   -0.55{col 55}{space 3}0.582{col 63}{space 4}-1.150527{col 76}{space 3} .6459389
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+({res}est6{txt} stored)
+
+{com}. lincom death_hat1 + death_hat2 + death_hat3 + death_hat4 + death_hat5 + death_hat6 + death_hat7 + death_hat8 + death_hat9 + death_hat10
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[granted_count]death_hat1 + [granted_count]death_hat2 + [granted_count]death_hat3 + [granted_count]death_hat4 + [granted_count]death_hat5 + [granted_count]death_hat6 + [granted_count]death_hat7 + [granted_count]death_hat8 + [granted_count]death_hat9 + [granted_count]death_hat10 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}granted_co~t{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2}-13.00591{col 26}{space 2} 7.198118{col 37}{space 1}   -1.81{col 46}{space 3}0.071{col 54}{space 4}-27.11397{col 67}{space 3} 1.102139
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd scalar Cumulative = r(estimate)
+
+{txt}added scalar:
+         e(Cumulative) =  {res}-13.005914
+
+{com}. cd "/Users/nitashajhala/Desktop/Stata Code/Regressions/2SLS Estimates/Mitigation(2SLS)/SA - Floods(2SLS)"
+{res}/Users/nitashajhala/Desktop/Stata Code/Regressions/2SLS Estimates/Mitigation(2SLS)/SA - Floods(2SLS)
+
+{com}. esttab using "SA : Flood-deaths (2SLS Estimates).tex", keep(lag_k_stock death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10     floodks_hat   gdp_per_capita_lag polity control_total_patents) replace b(3) se(3) nomtitle label star(% 0.15 * 0.10 ** 0.05 *** 0.01) booktabs alignment(D{c -(}.{c )-}{c -(}.{c )-}{c -(}-1{c )-}) title(Sensitivity analysis: effect of flood deaths on green innovation response (2SLS estimates) \label{c -(}reg122{c )-}) addnotes("Notes : Deaths are measured in thousands") eform stats(Cumulative ll  N)
+{res}{txt}{p 0 4 2}
+(file {bf}
+SA : Flood-deaths (2SLS Estimates).tex{rm}
+not found)
+{p_end}
+(output written to {browse  `"SA : Flood-deaths (2SLS Estimates).tex"'})
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/nitashajhala/Desktop/Stata Code/Regressions/2SLS Estimates/Mitigation(2SLS)/SA - Floods(2SLS)/2SLS_Flood_deaths.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}16 Apr 2022, 10:22:19
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
