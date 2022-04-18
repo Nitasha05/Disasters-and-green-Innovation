@@ -1,0 +1,48 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Green innovation response to extreme weather shocks (2SLS estimates) \label{reg122}}
+\begin{tabular}{l*{8}{D{.}{.}{-1}}}
+\toprule
+                    &\multicolumn{2}{c}{Storm}                  &\multicolumn{2}{c}{Drought}                &\multicolumn{2}{c}{Flood}                  &\multicolumn{2}{c}{Extreme Temperature}    \\\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                    &\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}&\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}&\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}&\multicolumn{1}{c}{Deaths}&\multicolumn{1}{c}{Damages}\\
+\midrule
+ratio\_green\_granted &                     &                     &                     &                     &                     &                     &                     &                     \\
+Green\_technology\_knowledge\_stocks(Year\_t-1)&       0.992         &       0.992         &       1.004         &       0.990         &       0.992         &       1.001         &       0.998         &       1.001         \\
+                    &     (0.017)         &     (0.017)         &     (0.014)         &     (0.015)         &     (0.015)         &     (0.013)         &     (0.014)         &     (0.013)         \\
+Year\_t-1            &       0.678\sym{**} &       0.924\sym{**} &       0.000         &       0.567         &      14.484         &       0.370\sym{**} &       1.317         &       0.879         \\
+                    &     (0.113)         &     (0.032)         &     (0.000)         &     (1.170)         &    (39.976)         &     (0.170)         &     (0.843)         &     (0.360)         \\
+Year\_t-2            &       1.177         &       1.037         &   4.434e+11         &       0.070         &       0.047         &       2.400         &       0.559         &       0.664         \\
+                    &     (0.311)         &     (0.054)         & (1.371e+13)         &     (0.158)         &     (0.120)         &     (1.640)         &     (0.493)         &     (0.419)         \\
+Year\_t-3            &       0.669\sym{*}  &       0.918\sym{*}  &       0.000\sym{**} &       1.472         &       0.314         &       0.852         &       1.418         &       3.642         \\
+                    &     (0.146)         &     (0.044)         &     (0.000)         &     (4.855)         &     (1.046)         &     (1.767)         &     (0.919)         &    (14.024)         \\
+Year\_t-4            &       0.379\sym{*}  &       0.838\sym{*}  &   1.468e+21\sym{**} &       0.005\sym{**} &       0.001\sym{**} &      36.385\sym{***}&       2.306         &       5.825         \\
+                    &     (0.204)         &     (0.084)         & (3.282e+22)         &     (0.012)         &     (0.004)         &    (42.970)         &     (1.947)         &    (17.601)         \\
+Year\_t-5            &       0.544\sym{\%}  &       0.899         &   4.615e+10\sym{\%}  &       0.047\sym{*}  &       1.238         &       1.518         &       1.367         &       0.658         \\
+                    &     (0.222)         &     (0.067)         & (7.524e+11)         &     (0.073)         &     (5.919)         &     (1.603)         &     (0.887)         &     (1.433)         \\
+Year\_t-6            &       1.934\sym{*}  &       1.206\sym{*}  &     135.649         &       0.096         &      14.906         &       0.569         &       1.725         &       1.057         \\
+                    &     (0.761)         &     (0.131)         &  (2843.141)         &     (0.204)         &    (75.904)         &     (0.618)         &     (1.435)         &     (1.388)         \\
+Adaptation\_KS(t-1)  &      11.293         &      29.247         &       1.038         &       1.042         &       8.415         &       0.167         &       0.461         &       0.555         \\
+                    &    (24.938)         &    (69.422)         &     (0.382)         &     (0.659)         &    (25.175)         &     (0.353)         &     (0.415)         &     (0.592)         \\
+Log\_Gdp\_per\_capita\_lag&       0.005\sym{\%}  &       0.001\sym{*}  &       0.000\sym{***}&       0.208         &       0.003         &       0.004\sym{**} &       0.066\sym{\%}  &       0.927         \\
+                    &     (0.018)         &     (0.003)         &     (0.000)         &     (0.284)         &     (0.015)         &     (0.009)         &     (0.118)         &     (3.620)         \\
+Institution\_index   &       1.021         &       0.995         &       0.976         &       1.240         &       1.032         &       1.157\sym{**} &       0.892         &       0.920         \\
+                    &     (0.049)         &     (0.052)         &     (0.144)         &     (0.283)         &     (0.057)         &     (0.067)         &     (0.106)         &     (0.106)         \\
+Year\_t-7            &                     &                     &    4903.358         &       0.135         &       4.660         &       1.129         &       1.447         &       0.276         \\
+                    &                     &                     & (53648.989)         &     (0.260)         &    (12.474)         &     (0.519)         &     (1.297)         &     (0.480)         \\
+Year\_t-8            &                     &                     &       0.068         &       0.142         &       1.800         &       1.716         & 5699988.274\sym{*}  &       0.149         \\
+                    &                     &                     &     (0.892)         &     (0.315)         &     (4.579)         &     (1.052)         &(51459809.243)         &     (0.372)         \\
+Year\_t-9            &                     &                     &       0.002         &                     &                     &       1.360         &   74668.020         &      15.739         \\
+                    &                     &                     &     (0.027)         &                     &                     &     (0.420)         &(587990.523)         &    (61.101)         \\
+Year\_t-10           &                     &                     &       0.000\sym{**} &                     &                     &       0.722         &      28.097         &       0.211         \\
+                    &                     &                     &     (0.000)         &                     &                     &     (0.165)         &   (104.903)         &     (0.483)         \\
+\midrule
+Cumulative effect   &      -1.546         &      -0.224         &     -53.185         &     -17.563         &      -3.156         &       3.813         &      32.219         &       0.166         \\
+ Log-liklihood      &    -392.563         &    -392.614         &    -281.834         &    -326.612         &    -356.997         &    -307.614         &    -315.628         &    -316.274         \\
+Observations        &     733.000         &     733.000         &     585.000         &     652.000         &     670.000         &     601.000         &     617.000         &     617.000         \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Exponentiated coefficients; Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize Notes : Deaths are measured in thousands and economic damages are measures in billions US$ at 2015 price. KS stands for knowledge stock.}\\
+\multicolumn{9}{l}{\footnotesize \sym{\%} \(p<0.15\), \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
