@@ -136,9 +136,8 @@ order r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_d
 order r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected, after(total_affected)
 order r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj, after(total_damages_adj)
 cd "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata"
-merge 1:1 country year using TOTPAT.dta, generate(merge2)
+merge 1:1 country year using TOTPAT.dta, generate(merge3)
 sort country year
 drop if country=="PH" | country =="TH"
 replace control_total_patents = log(count)
-lab var count "Total Patents(count)"
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/data_drought.dta"
