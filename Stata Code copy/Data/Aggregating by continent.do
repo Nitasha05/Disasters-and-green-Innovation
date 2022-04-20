@@ -10,7 +10,39 @@ egen panelvar = group(country)
 xtset panelvar year
 cd "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata"
 merge 1:1 country year using data_storm.dta, generate(match2)
-drop dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
+replace TOTDEATHS = TOTDEATHS - total_deaths
+replace r1_TOTDEATHS = r1_TOTDEATHS - r1_total_deaths
+replace r2_TOTDEATHS = r2_TOTDEATHS - r2_total_deaths
+replace r3_TOTDEATHS = r3_TOTDEATHS - r3_total_deaths
+replace r4_TOTDEATHS = r4_TOTDEATHS - r4_total_deaths
+replace r5_TOTDEATHS = r5_TOTDEATHS - r5_total_deaths
+replace r6_TOTDEATHS = r6_TOTDEATHS - r6_total_deaths
+replace r7_TOTDEATHS = r7_TOTDEATHS - r7_total_deaths
+replace r8_TOTDEATHS = r8_TOTDEATHS - r8_total_deaths
+replace r9_TOTDEATHS = r9_TOTDEATHS - r9_total_deaths
+replace r10_TOTDEATHS = r10_TOTDEATHS - r10_total_deaths
+replace TOTDAMAGES = TOTDAMAGES - total_damages_adj
+replace r1_TOTDAMAGES = r1_TOTDAMAGES - r1_total_damages_adj
+replace r2_TOTDAMAGES = r2_TOTDAMAGES - r2_total_damages_adj
+replace r3_TOTDAMAGES = r3_TOTDAMAGES - r3_total_damages_adj
+replace r4_TOTDAMAGES = r4_TOTDAMAGES - r4_total_damages_adj
+replace r5_TOTDAMAGES = r5_TOTDAMAGES - r5_total_damages_adj
+replace r6_TOTDAMAGES = r6_TOTDAMAGES - r6_total_damages_adj
+replace r7_TOTDAMAGES = r7_TOTDAMAGES - r7_total_damages_adj
+replace r8_TOTDAMAGES = r8_TOTDAMAGES - r8_total_damages_adj
+replace r9_TOTDAMAGES = r9_TOTDAMAGES - r9_total_damages_adj
+replace r10_TOTDAMAGES = r10_TOTDAMAGES - r10_total_damages_adj
+replace TOTAFFECTED = TOTAFFECTED - total_affected
+replace r1_TOTAFFECTED = r1_TOTAFFECTED - r1_total_affected
+replace r2_TOTAFFECTED = r2_TOTAFFECTED - r2_total_affected
+replace r3_TOTAFFECTED = r3_TOTAFFECTED - r3_total_affected
+replace r4_TOTAFFECTED = r4_TOTAFFECTED - r4_total_affected
+replace r5_TOTAFFECTED = r5_TOTAFFECTED - r5_total_affected
+replace r6_TOTAFFECTED = r6_TOTAFFECTED - r6_total_affected
+replace r7_TOTAFFECTED = r7_TOTAFFECTED - r7_total_affected
+replace r8_TOTAFFECTED = r8_TOTAFFECTED - r8_total_affected
+replace r9_TOTAFFECTED = r9_TOTAFFECTED - r9_total_affected
+replace r10_TOTAFFECTED = r10_TOTAFFECTED - r10_total_affected
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/Continent_storm.dta"
 
 #FLOOD
@@ -22,7 +54,39 @@ egen panelvar = group(country)
 xtset panelvar year
 cd "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata"
 merge 1:1 country year using data_flood.dta, generate(match2)
-drop dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
+replace TOTDEATHS = TOTDEATHS - total_deaths
+replace r1_TOTDEATHS = r1_TOTDEATHS - r1_total_deaths
+replace r2_TOTDEATHS = r2_TOTDEATHS - r2_total_deaths
+replace r3_TOTDEATHS = r3_TOTDEATHS - r3_total_deaths
+replace r4_TOTDEATHS = r4_TOTDEATHS - r4_total_deaths
+replace r5_TOTDEATHS = r5_TOTDEATHS - r5_total_deaths
+replace r6_TOTDEATHS = r6_TOTDEATHS - r6_total_deaths
+replace r7_TOTDEATHS = r7_TOTDEATHS - r7_total_deaths
+replace r8_TOTDEATHS = r8_TOTDEATHS - r8_total_deaths
+replace r9_TOTDEATHS = r9_TOTDEATHS - r9_total_deaths
+replace r10_TOTDEATHS = r10_TOTDEATHS - r10_total_deaths
+replace TOTDAMAGES = TOTDAMAGES - total_damages_adj
+replace r1_TOTDAMAGES = r1_TOTDAMAGES - r1_total_damages_adj
+replace r2_TOTDAMAGES = r2_TOTDAMAGES - r2_total_damages_adj
+replace r3_TOTDAMAGES = r3_TOTDAMAGES - r3_total_damages_adj
+replace r4_TOTDAMAGES = r4_TOTDAMAGES - r4_total_damages_adj
+replace r5_TOTDAMAGES = r5_TOTDAMAGES - r5_total_damages_adj
+replace r6_TOTDAMAGES = r6_TOTDAMAGES - r6_total_damages_adj
+replace r7_TOTDAMAGES = r7_TOTDAMAGES - r7_total_damages_adj
+replace r8_TOTDAMAGES = r8_TOTDAMAGES - r8_total_damages_adj
+replace r9_TOTDAMAGES = r9_TOTDAMAGES - r9_total_damages_adj
+replace r10_TOTDAMAGES = r10_TOTDAMAGES - r10_total_damages_adj
+replace TOTAFFECTED = TOTAFFECTED - total_affected
+replace r1_TOTAFFECTED = r1_TOTAFFECTED - r1_total_affected
+replace r2_TOTAFFECTED = r2_TOTAFFECTED - r2_total_affected
+replace r3_TOTAFFECTED = r3_TOTAFFECTED - r3_total_affected
+replace r4_TOTAFFECTED = r4_TOTAFFECTED - r4_total_affected
+replace r5_TOTAFFECTED = r5_TOTAFFECTED - r5_total_affected
+replace r6_TOTAFFECTED = r6_TOTAFFECTED - r6_total_affected
+replace r7_TOTAFFECTED = r7_TOTAFFECTED - r7_total_affected
+replace r8_TOTAFFECTED = r8_TOTAFFECTED - r8_total_affected
+replace r9_TOTAFFECTED = r9_TOTAFFECTED - r9_total_affected
+replace r10_TOTAFFECTED = r10_TOTAFFECTED - r10_total_affected
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/Continent_flood.dta"
 
 #DROUGHT
@@ -34,7 +98,39 @@ egen panelvar = group(country)
 xtset panelvar year
 cd "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata"
 merge 1:1 country year using data_drought.dta, generate(match2)
-drop dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
+replace TOTDEATHS = TOTDEATHS - total_deaths
+replace r1_TOTDEATHS = r1_TOTDEATHS - r1_total_deaths
+replace r2_TOTDEATHS = r2_TOTDEATHS - r2_total_deaths
+replace r3_TOTDEATHS = r3_TOTDEATHS - r3_total_deaths
+replace r4_TOTDEATHS = r4_TOTDEATHS - r4_total_deaths
+replace r5_TOTDEATHS = r5_TOTDEATHS - r5_total_deaths
+replace r6_TOTDEATHS = r6_TOTDEATHS - r6_total_deaths
+replace r7_TOTDEATHS = r7_TOTDEATHS - r7_total_deaths
+replace r8_TOTDEATHS = r8_TOTDEATHS - r8_total_deaths
+replace r9_TOTDEATHS = r9_TOTDEATHS - r9_total_deaths
+replace r10_TOTDEATHS = r10_TOTDEATHS - r10_total_deaths
+replace TOTDAMAGES = TOTDAMAGES - total_damages_adj
+replace r1_TOTDAMAGES = r1_TOTDAMAGES - r1_total_damages_adj
+replace r2_TOTDAMAGES = r2_TOTDAMAGES - r2_total_damages_adj
+replace r3_TOTDAMAGES = r3_TOTDAMAGES - r3_total_damages_adj
+replace r4_TOTDAMAGES = r4_TOTDAMAGES - r4_total_damages_adj
+replace r5_TOTDAMAGES = r5_TOTDAMAGES - r5_total_damages_adj
+replace r6_TOTDAMAGES = r6_TOTDAMAGES - r6_total_damages_adj
+replace r7_TOTDAMAGES = r7_TOTDAMAGES - r7_total_damages_adj
+replace r8_TOTDAMAGES = r8_TOTDAMAGES - r8_total_damages_adj
+replace r9_TOTDAMAGES = r9_TOTDAMAGES - r9_total_damages_adj
+replace r10_TOTDAMAGES = r10_TOTDAMAGES - r10_total_damages_adj
+replace TOTAFFECTED = TOTAFFECTED - total_affected
+replace r1_TOTAFFECTED = r1_TOTAFFECTED - r1_total_affected
+replace r2_TOTAFFECTED = r2_TOTAFFECTED - r2_total_affected
+replace r3_TOTAFFECTED = r3_TOTAFFECTED - r3_total_affected
+replace r4_TOTAFFECTED = r4_TOTAFFECTED - r4_total_affected
+replace r5_TOTAFFECTED = r5_TOTAFFECTED - r5_total_affected
+replace r6_TOTAFFECTED = r6_TOTAFFECTED - r6_total_affected
+replace r7_TOTAFFECTED = r7_TOTAFFECTED - r7_total_affected
+replace r8_TOTAFFECTED = r8_TOTAFFECTED - r8_total_affected
+replace r9_TOTAFFECTED = r9_TOTAFFECTED - r9_total_affected
+replace r10_TOTAFFECTED = r10_TOTAFFECTED - r10_total_affected
 save "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/Continent_drought.dta"
 
 #EXTEMP
@@ -45,7 +141,39 @@ egen panelvar = group(country)
 xtset panelvar year
 cd "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata"
 merge 1:1 country year using data_extemp.dta, generate(match2)
-drop dam_hat1 dam_hat2 dam_hat3 dam_hat4 dam_hat5 dam_hat6 dam_hat7 dam_hat8 dam_hat9 dam_hat10 death_hat1 death_hat2 death_hat3 death_hat4 death_hat5 death_hat6 death_hat7 death_hat8 death_hat9 death_hat10 dam_v2h_fe dam_v2h_fe1 dam_v2h_fe2 dam_v2h_fe3 dam_v2h_fe4 dam_v2h_fe5 dam_v2h_fe6 dam_v2h_fe7 dam_v2h_fe8 dam_v2h_fe9 dam_v2h_fe10 death_hat dam_hat v2h_fe v2h_fe1 v2h_fe2 v2h_fe3 v2h_fe4 v2h_fe5 v2h_fe6 v2h_fe7 v2h_fe8 v2h_fe9 v2h_fe10 r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths r1_total_affected r2_total_affected r3_total_affected r4_total_affected r5_total_affected r6_total_affected r7_total_affected r8_total_affected r9_total_affected r10_total_affected r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj
+replace TOTDEATHS = TOTDEATHS - total_deaths
+replace r1_TOTDEATHS = r1_TOTDEATHS - r1_total_deaths
+replace r2_TOTDEATHS = r2_TOTDEATHS - r2_total_deaths
+replace r3_TOTDEATHS = r3_TOTDEATHS - r3_total_deaths
+replace r4_TOTDEATHS = r4_TOTDEATHS - r4_total_deaths
+replace r5_TOTDEATHS = r5_TOTDEATHS - r5_total_deaths
+replace r6_TOTDEATHS = r6_TOTDEATHS - r6_total_deaths
+replace r7_TOTDEATHS = r7_TOTDEATHS - r7_total_deaths
+replace r8_TOTDEATHS = r8_TOTDEATHS - r8_total_deaths
+replace r9_TOTDEATHS = r9_TOTDEATHS - r9_total_deaths
+replace r10_TOTDEATHS = r10_TOTDEATHS - r10_total_deaths
+replace TOTDAMAGES = TOTDAMAGES - total_damages_adj
+replace r1_TOTDAMAGES = r1_TOTDAMAGES - r1_total_damages_adj
+replace r2_TOTDAMAGES = r2_TOTDAMAGES - r2_total_damages_adj
+replace r3_TOTDAMAGES = r3_TOTDAMAGES - r3_total_damages_adj
+replace r4_TOTDAMAGES = r4_TOTDAMAGES - r4_total_damages_adj
+replace r5_TOTDAMAGES = r5_TOTDAMAGES - r5_total_damages_adj
+replace r6_TOTDAMAGES = r6_TOTDAMAGES - r6_total_damages_adj
+replace r7_TOTDAMAGES = r7_TOTDAMAGES - r7_total_damages_adj
+replace r8_TOTDAMAGES = r8_TOTDAMAGES - r8_total_damages_adj
+replace r9_TOTDAMAGES = r9_TOTDAMAGES - r9_total_damages_adj
+replace r10_TOTDAMAGES = r10_TOTDAMAGES - r10_total_damages_adj
+replace TOTAFFECTED = TOTAFFECTED - total_affected
+replace r1_TOTAFFECTED = r1_TOTAFFECTED - r1_total_affected
+replace r2_TOTAFFECTED = r2_TOTAFFECTED - r2_total_affected
+replace r3_TOTAFFECTED = r3_TOTAFFECTED - r3_total_affected
+replace r4_TOTAFFECTED = r4_TOTAFFECTED - r4_total_affected
+replace r5_TOTAFFECTED = r5_TOTAFFECTED - r5_total_affected
+replace r6_TOTAFFECTED = r6_TOTAFFECTED - r6_total_affected
+replace r7_TOTAFFECTED = r7_TOTAFFECTED - r7_total_affected
+replace r8_TOTAFFECTED = r8_TOTAFFECTED - r8_total_affected
+replace r9_TOTAFFECTED = r9_TOTAFFECTED - r9_total_affected
+replace r10_TOTAFFECTED = r10_TOTAFFECTED - r10_total_affected
 save "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/Continent_extemp.dta"
 
 

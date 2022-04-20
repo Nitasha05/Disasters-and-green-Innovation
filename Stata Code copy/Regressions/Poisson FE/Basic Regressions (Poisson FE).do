@@ -3,54 +3,53 @@ est clear
 cd "/Users/nitashajhala/Desktop/Stata Code/Regressions/Poisson FE/Replication(Basic)"
 #STORMS
 log using "/Users/nitashajhala/Desktop/Stata Code/Regressions/Poisson FE/Replication(Basic)/PoissonFE_replication.smcl"
-#Deaths(10)
+#Deaths(7)
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/data_storm.dta"
-eststo: xtpoisson _storm_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26 , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths+ r8_total_deaths+ r9_total_deaths+ r10_total_deaths
+eststo: xtpoisson _storm_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26 , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths
 estadd scalar Cumulative = r(estimate)
 
-#Damages(9)
-eststo: xtpoisson _storm_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26, fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj + r7_total_damages_adj + r8_total_damages_adj + r9_total_damages_adj
+#Damages(7)
+eststo: xtpoisson _storm_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26, fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj + r7_total_damages_adj 
 estadd scalar Cumulative = r(estimate)
 clear
 
-#DROUGHTS(6)
+#DROUGHTS(7)
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/data_drought.dta"
 #Deaths
-eststo: xtpoisson _drought_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths 
-estadd scalar Cumulative = r(estimate)
+eststo: xtpoisson _drought_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths 
 
-#Damages(6)
-eststo: xtpoisson _drought_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj
+#Damages(7)
+eststo: xtpoisson _drought_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj + r7_total_damages_adj
 estadd scalar Cumulative = r(estimate)
 clear
 
 #FLOODS
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/data_flood.dta"
-#Deaths(6)
-eststo: xtpoisson _flood_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths + r8_total_deaths 
+#Deaths(7)
+eststo: xtpoisson _flood_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths
 estadd scalar Cumulative = r(estimate)
 
-#Damages(10)
-eststo: xtpoisson _flood_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj+ r7_total_damages_adj+ r8_total_damages_adj+ r9_total_damages_adj+ r10_total_damages_adj
+#Damages(7)
+eststo: xtpoisson _flood_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj+ r7_total_damages_adj
 estadd scalar Cumulative = r(estimate)
 clear
 
 #EXTREME TEMPERATURES
 use "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/data_extemp.dta"
-#Deaths(8)
-eststo: xtpoisson _extemp_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths + r8_total_deaths
+#Deaths(7)
+eststo: xtpoisson _extemp_granted_count r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths 
 estadd scalar Cumulative = r(estimate)
 
-#Damages(8)
-eststo: xtpoisson _extemp_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj+ r7_total_damages_adj + r8_total_damages_adj
+#Damages(7)
+eststo: xtpoisson _extemp_granted_count r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj+ r6_total_damages_adj+ r7_total_damages_adj 
 estadd scalar Cumulative = r(estimate)
 clear
 
@@ -66,50 +65,50 @@ est clear
 cd "/Users/nitashajhala/Desktop/Stata Code/Regressions/Poisson FE/Mitigation(Basic)"
 #Storms
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Storms Stata/data_storm.dta"
-#Deaths(6)
-eststo: xtpoisson granted_count lag_k_stock  r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths
+#Deaths(7)
+eststo: xtpoisson granted_count lag_k_stock  r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths+ r7_total_deaths
 estadd scalar Cumulative = r(estimate)
-#Damages(6)
-eststo: xtpoisson granted_count lag_k_stock  r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj 
+#Damages(7)
+eststo: xtpoisson granted_count lag_k_stock  r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_storm_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj + r7_total_damages_adj
 estadd scalar Cumulative = r(estimate)
 clear
 
 #Drought
-#Deaths(10)
+#Deaths(7)
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Droughts Stata/data_drought.dta"
-eststo: xtpoisson granted_count lag_k_stock  r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths + r8_total_deaths + r9_total_deaths + r10_total_deaths 
+eststo: xtpoisson granted_count lag_k_stock  r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths 
 estadd scalar Cumulative = r(estimate)
 #Damages(10)
-eststo: xtpoisson granted_count lag_k_stock  r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj + r7_total_damages_adj + r8_total_damages_adj + r9_total_damages_adj + r10_total_damages_adj 
+eststo: xtpoisson granted_count lag_k_stock  r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_drought_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj + r7_total_damages_adj 
 estadd scalar Cumulative = r(estimate)
 
 
 #Floods
-#Deaths(8)
+#Deaths(7)
 use "/Users/nitashajhala/Desktop/Stata Code/Data/Floods Stata/data_flood.dta"
-eststo: xtpoisson granted_count lag_k_stock  r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths + r8_total_deaths
+eststo: xtpoisson granted_count lag_k_stock  r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26    , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths
 estadd scalar Cumulative = r(estimate)
 #Damages(6)
-eststo: xtpoisson granted_count lag_k_stock r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
-lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj 
+eststo: xtpoisson granted_count lag_k_stock r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_flood_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26  , fe vce(robust)
+lincom  r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj + r7_total_damages_adj
 estadd scalar Cumulative = r(estimate)
 clear
 
 
 #Extemp
-#Deaths(10)
+#Deaths(7)
 use "/Users/nitashajhala/Desktop/Stata Code/Data/ExTemp Stata/data_extemp.dta"
-eststo: xtpoisson granted_count lag_k_stock r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths r8_total_deaths r9_total_deaths r10_total_deaths lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
-lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths + r8_total_deaths + r9_total_deaths + r10_total_deaths 
+eststo: xtpoisson granted_count lag_k_stock r1_total_deaths r2_total_deaths r3_total_deaths r4_total_deaths r5_total_deaths r6_total_deaths r7_total_deaths lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
+lincom r1_total_deaths  + r2_total_deaths + r3_total_deaths + r4_total_deaths + r5_total_deaths + r6_total_deaths + r7_total_deaths 
 estadd scalar Cumulative = r(estimate)
-#Damages(10)
-eststo: xtpoisson granted_count lag_k_stock r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj r8_total_damages_adj r9_total_damages_adj r10_total_damages_adj lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
-lincom r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj + r7_total_damages_adj + r8_total_damages_adj + r9_total_damages_adj + r10_total_damages_adj 
+#Damages(7)
+eststo: xtpoisson granted_count lag_k_stock r1_total_damages_adj r2_total_damages_adj r3_total_damages_adj r4_total_damages_adj r5_total_damages_adj r6_total_damages_adj r7_total_damages_adj lag_extemp_k_stock gdp_per_capita_lag polity control_total_patents   v6-v26      , fe vce(robust)
+lincom r1_total_damages_adj+ r2_total_damages_adj+ r3_total_damages_adj+ r4_total_damages_adj+ r5_total_damages_adj + r6_total_damages_adj + r7_total_damages_adj 
 estadd scalar Cumulative = r(estimate)
 clear
 

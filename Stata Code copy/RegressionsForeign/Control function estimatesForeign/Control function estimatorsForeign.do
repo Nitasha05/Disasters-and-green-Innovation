@@ -1,5 +1,4 @@
-CONTROL FUNCTION ESTIMATOR
-
+ssc install estout, replace
 #Second Stage - Replication
 est clear
 cd "/Users/nitashajhala/Desktop/Stata Code/RegressionsForeign/Control function estimatesForeign/ReplicationForeign"
